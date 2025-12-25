@@ -1,0 +1,36 @@
+$tablet: 768px;      // iPad
+$tablet-pro: 1024px; // iPad Pro
+$desktop: 1200px;
+
+button {
+    background-color: #F88379;
+    color: white;
+    padding: .7rem 1.8rem;
+
+    margin: 1rem;
+    border-radius: .8rem;
+    border: none;
+    box-shadow: 0 4px 8px rgba(193, 193, 193, 0.4);
+
+    font-size: 1.1rem;
+
+    @media (min-width: $tablet) {
+
+    
+
+      // iPad
+    }
+
+    @media (min-width: $tablet-pro)  {
+
+    
+   
+
+      // iPad Pro
+    }
+
+    @media (min-width: $desktop) {
+
+      
+    }
+}

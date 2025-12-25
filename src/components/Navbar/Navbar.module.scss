@@ -1,0 +1,290 @@
+$tablet: 768px;      // iPad
+$tablet-pro: 1024px; // iPad Pro
+$desktop: 1200px;
+
+.navbar {
+    position:fixed;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: .5rem 1rem;
+    background-color: #F88379; 
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.5);
+    border-radius: 1rem;
+
+    width: calc(100% - 3rem);
+    margin: 0rem 0.5rem;
+  
+    z-index: 999;
+
+    
+
+  
+    .logo {
+      font-weight: bold;
+      font-size: 1.5rem;
+      color: white;
+      width: 7rem;
+
+      a {
+        text-decoration: none;
+        color: white;  // default color
+        transition: color 0.3s;
+        font-size: 1rem;
+      }
+    }
+  
+    .menu {
+      display: flex;
+      list-style: none;
+      gap: .5rem;
+      width: calc(100% - 3.5rem);
+      margin: 0.5rem;
+      align-items: center;
+  
+      li {
+        color: white;
+        cursor: pointer;
+        font-weight: 500;
+        text-decoration: none;
+        color: white;
+        
+        
+        a {
+          text-decoration: none;
+          color: white;  
+          transition: color 0.3s;
+          font-size: 1.5rem;
+          line-height: 3.6;
+          
+        }
+        
+      }
+
+      .divider {
+        background-color: #a058fe;
+        padding: 0rem 1rem;
+        border-radius: .5rem;
+
+        @media (min-width: $desktop) {
+          padding: 0rem .3rem 0rem 1.5rem;
+        }
+      }
+
+      .divider a {
+        color: #faf9f9;
+        font-size: 1rem;
+        text-align: center;
+      }
+    }
+
+    &.blue {
+      background-color: #A0CDFF;
+
+    }
+
+      @media (min-width: $tablet) {
+        p {
+          font-size: 1.2rem;
+          padding: 1rem;
+        }
+    
+
+      // iPad
+    }
+
+    @media (min-width: $tablet-pro)  {
+        p {
+          font-size: 1.5rem;
+          padding: 1rem;
+        }
+
+        .logo {
+          width: 10rem;
+        }
+
+        .logo a {
+          font-size: 1.5rem !important;
+        }
+
+      // iPad Pro
+    }
+
+    @media (min-width: $desktop) {
+
+      .logo {
+        font-size: 2.5rem;
+        font-weight: 500;
+      }
+    }
+  }
+  
+  
+  
+  .logo a {
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 1rem;
+  }
+
+  .hamburger {
+    background: none;
+    border: none;
+    font-size: 1rem;
+    cursor: pointer;
+    text-align: right;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    margin-left: 1rem;
+    z-index: 1101;  
+
+    &.openBtn { box-shadow: 0 6px 18px rgba(0,0,0,0.12); }
+
+
+  }
+
+  .top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0rem 1rem;
+    gap: 8rem;
+  
+    .logo a {
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 1rem;
+    }
+  
+    .hamburger {
+      background: none;
+      border: none;
+      font-size: 1rem;
+      cursor: pointer;
+      text-align: right;
+    }
+  }
+  
+
+  @media (min-width: $tablet) {
+    .top {
+      padding: 0 1rem;
+      gap: 14rem;
+    }
+    
+  
+    .logo a {
+      font-size: 1.25rem;
+    }
+  
+    .hamburger {
+      font-size: 1.25rem;
+      margin-left: 18rem;
+    }
+  }
+  
+  
+  @media (min-width: $tablet-pro) {
+    .top {
+      padding: 0 3rem;
+    }
+  
+    .logo a {
+      font-size: 1.4rem;
+    }
+
+    .hamburger {
+      font-size: 1.5rem;
+      margin-left: 28rem;
+    }
+  }
+
+  .menu {
+    position: fixed;
+    inset: 0;
+    z-index: 1000;
+    background: #F88379;
+    backdrop-filter: blur(.8rem); 
+    -webkit-backdrop-filter: blur(1rem);
+    background: linear-gradient(
+      135deg,
+      rgba(248, 132, 121, 0.837),
+      rgba(248, 132, 121, 0.776)
+    );
+    
+  
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    border-radius: 1rem;
+  
+    transform: translateY(-120%);
+    transition: transform 0.55s ease;
+  }
+  
+  .menu.open {
+    transform: translateY(0);
+  }
+  
+  .menu li a {
+    font-size: 1.5rem;
+    text-decoration: none;
+  }
+  
+
+  @media (min-width: $desktop) {
+    .hamburger {
+      display: none;
+    }
+  
+    .menu {
+      position: static;
+      transform: none;
+      flex-direction: row;
+      height: auto;
+      background: transparent;
+      gap: 1.5rem;
+    }
+  
+    .menu li a {
+      font-size: 1.5rem;
+    }
+
+
+  }
+  
+  @media (min-width: $desktop) {
+
+    .logo {
+      font-size: 5rem;
+    }
+    
+    .menu {
+      flex-direction: row;
+      justify-content: flex-end; 
+      gap: 4.5rem;
+    }
+  
+    .menu li a {
+      font-size: 1rem;
+      padding-right: 2rem;
+  
+      &:hover {
+        color: #1E3A8A;
+        transform: scale(1.2);
+      }
+    }
+  }
+  
+
+  .navbar.blue {
+    background-color: #A0CDFF;
+  
+    .menu {
+      background: linear-gradient(135deg, rgba(160,205,255,0.95), rgba(160,205,255,0.85));
+    }
+  
+    .logo a, .menu li a { color: #073763; } 
+    .divider { background-color: #6e4bff; }
+  }

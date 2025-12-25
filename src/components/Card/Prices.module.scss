@@ -1,0 +1,99 @@
+$tablet: 768px;      // iPad
+$tablet-pro: 1024px; // iPad Pro
+$desktop: 1200px;
+
+
+.card {
+    display: flex;
+    flex-direction: column;
+    background-color: #f7f3f3;
+    border: .5px solid #F88379;
+    margin: 1rem 0rem;
+    border-radius: 1rem;    
+    padding: 1rem;        
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.19);
+
+      &.english {
+        background: linear-gradient(125deg, rgba(152, 184, 214, 0.677), #79ace793);
+        border-color: #4d6fa2;
+    
+        /* override text colors for english */
+        .header h3,
+        .price,
+        .descr {
+          color: #0c3a6b;
+        }
+
+    }
+
+    &:hover {
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        transition: 0.3s;
+        background-color: #f8847916;
+
+        &.english {
+            background-color: #cee5ffa1;
+        }
+
+        hr {
+            border-color: #d9d8d8;
+        }
+    }
+
+    .header {
+        display: flex;
+        justify-content: space-between;
+
+        h3 {
+            color: #F88379;
+        }
+    }
+    
+    .price {
+        color: #F88379;
+        font-weight: 400;
+
+        
+    }
+
+    p {
+        color: #F88379;
+        font-weight: 300;
+    }
+
+
+    @media (min-width: $tablet-pro) {
+        .header {
+            h3 {
+                font-size: 1.5rem;
+            }
+        }
+
+        h3 {
+            font-size: 1rem;
+        }
+
+        p {
+            font-size: 1.2rem;
+        }
+  
+    }
+
+    @media (min-width: $desktop) {
+        .header {
+            h3 {
+                font-size: 1.8rem;
+            }
+        }
+
+        h3 {
+            font-size: 1rem;
+        }
+
+        p {
+            font-size: 1.2rem;
+        }
+  
+    }
+}
+

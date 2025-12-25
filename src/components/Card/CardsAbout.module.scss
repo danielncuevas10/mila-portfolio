@@ -1,0 +1,112 @@
+$tablet: 768px;      // iPad
+$tablet-pro: 1024px; // iPad Pro
+$desktop: 1200px;
+
+
+.card {
+    background-color: rgb(255, 255, 255);
+    border: 1px solid #f884790e;
+    margin: 2rem .5rem;
+    border-radius: 1rem;    
+    padding: .5rem;        
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.19);
+    text-decoration: none;
+    list-style: none;
+
+
+    .row {
+        display: flex;
+        gap: 1rem;
+        align-items: center; // keeps image + text aligned nicely at the top
+      }
+      
+      .row img {
+        height: 5rem;
+        width: 4rem;
+        border-radius: .5rem;
+      }
+      
+      .text {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
+        h3 {
+            font-weight: 400;
+        }
+      }
+      
+
+    .title {
+        margin: 0.5rem 0 0 0;   
+        text-align: left;     
+        width: 100%;
+        padding: 0;
+        font-size: 1.2rem;
+        color: #000000;
+        font-size: 1.2rem;
+        font-weight: 400;
+        padding: .5rem .5rem 0rem 0rem;
+    }
+
+
+
+      p {
+        width: 100%;
+        padding: 0;
+        text-align: justify;
+        font-size: 1rem;
+        color: #7f7f7f;
+        font-weight: 300;
+      }
+
+    ul {
+        padding-left: .8rem;
+        margin: 0.2rem 0 0 0;
+        font-size: .9rem;
+        font-weight: 200;
+        color: #7f7f7f;
+    }
+
+    ul li::marker {
+        font-size: 0.5rem;       // smaller bullet
+        color: #7d7d7d;             // optional: change color
+      }
+
+
+    &:hover {
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        transition: 0.3s;
+        background-color: #f8847916;
+
+        &.english {
+          box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(82, 79, 79, 0.19);
+          transition: 0.3s;
+          background-color: #cee5ff2b;
+      }
+    }
+
+    @media (min-width: $tablet-pro) {
+
+      .title {
+        font-size: 1.8rem;
+      }
+
+      p {
+        font-size: 1.2rem;
+        font-weight: 400;
+      }
+
+    ul {
+      font-size: 1.1rem;
+      font-weight: 300;
+    }
+
+  }
+
+  @media (min-width: $tablet-pro) {
+      font-size: 1.2rem;
+
+  }
+
+}
