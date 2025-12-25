@@ -1,6 +1,6 @@
 import React from "react";
 import { Navbar } from "../../components/Navbar/Navbar";
-import mila from "../../assets/pictures/mila.svg";
+import mila from "../../assets/pictures/Mila.svg";
 import math from "../../assets/pictures/math.png";
 import arrowDown from "../../assets/pictures/icons/prices/arrow-down.svg";
 import styles from "./Landing.module.scss";
