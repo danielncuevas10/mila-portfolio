@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import { useLocation } from "react-router-dom";
 import { Navbar } from "../../components/Navbar/Navbar";
-import milaB from "../../assets/pictures/milaB.svg";
+import milaB from "../../assets/pictures/MilaB.svg";
 import math from "../../assets/pictures/math.png";
 import arrowDown from "../../assets/pictures/icons/prices/arrow-down.svg";
 import styles from "./Landing.module.scss";
