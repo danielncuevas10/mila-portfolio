@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect } from "react";
+import React, { useEffect } from "react";
 import { useLocation } from "react-router-dom";
 import { Navbar } from "../../components/Navbar/Navbar";
 import milaB from "../../assets/pictures/milaB.svg";

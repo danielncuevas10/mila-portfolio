@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect } from "react";
+import React from "react";
 import { Navbar } from "../../components/Navbar/Navbar";
 import mila from "../../assets/pictures/mila.svg";
 import math from "../../assets/pictures/math.png";

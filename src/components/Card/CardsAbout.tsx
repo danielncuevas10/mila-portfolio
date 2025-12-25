@@ -1,4 +1,3 @@
-import React from "react";
 import styles from "./CardsAbout.module.scss";
 
 export type Feature = {
