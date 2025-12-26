@@ -2,6 +2,7 @@ import React from "react";
 import { Navbar } from "../../components/Navbar/Navbar";
 import mila from "../../assets/pictures/Mila.svg";
 import math from "../../assets/pictures/math.png";
+import gmail from "../../assets/pictures/icons/gmail.png";
 import arrowDown from "../../assets/pictures/icons/prices/arrow-down.svg";
 import styles from "./Landing.module.scss";
 import Button from "../../components/Button/Button";
@@ -65,20 +66,23 @@ export const Landing = () => {
             <h3>Dedicated to Your Academic Success</h3>
             <p>
               With over 6 years of teaching experience and a passion for
-              learning, I’ve helped so many students discover their true
-              capabilities and achieve their academic goals. With experience in
-              individual tutoring, online lessons, and teaching in a university
-              classroom setting, I have developed an approach that prioritizes
-              getting to know my students learning styles and focusing on
-              understanding and practice rather than lecturing and memorization.
+              learning, I’ve helped students discover their true capabilities
+              and achieve meaningful academic goals. I studied at the University
+              of British Columbia and am currently a master’s student in Data
+              Science in Europe, combining a strong academic foundation with
+              hands-on teaching experience. Through individual tutoring, online
+              lessons, and university-level teaching, I’ve developed an approach
+              that prioritizes understanding, practice, and adapting to each
+              student’s learning style rather than relying on memorization or
+              passive lecturing.
             </p>
             <p>
-              With a formal background in mathematics, and tutoring experience
-              in a wide range of subjects, I can help you achieve your learning
-              goals - whether that’s preparing for an exam, or gaining more
-              knowledge and skills in a subject. I am here to work along side
-              you and build personalized plans and lessons to reveal your true
-              learning abilities!
+              With a formal background in mathematics and experience tutoring a
+              wide range of subjects, I can help you achieve your learning
+              goals—whether that means exam preparation, strengthening
+              fundamentals, or developing practical, real-world skills. I work
+              alongside my students to build personalized learning plans that
+              turn complex ideas into confidence and clarity.
             </p>
           </div>
         </div>
@@ -190,6 +194,30 @@ export const Landing = () => {
             </div>
           </div>
         </div>
+      </div>
+
+      <div className={styles.footer}>
+        <h2>Not sure if I'm for you?</h2>
+        <div className={styles.desktopFooter}>
+          <h3>
+            Let's have a free 15 minute conversation to discuss what would work
+            best for you .
+          </h3>
+
+          <div className={styles.footerGmail}>
+            <img src={gmail} alt="gmail icon" className={styles.gmailIcon} />
+            <div className={styles.footerGmail2}>
+              <h4>Send me an email to: </h4>
+              <h4>
+                <a href="mailto:mila.micovic26@gmail.com">
+                  mila.micovic26@gmail.com
+                </a>
+              </h4>
+            </div>
+          </div>
+        </div>
+
+        <p>© Designed and Developed by The Cave</p>
       </div>
     </div>
   );

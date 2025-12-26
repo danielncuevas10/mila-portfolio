@@ -17,6 +17,11 @@ $desktop: 1200px;
   
     z-index: 999;
 
+    @media (min-width: $desktop) {
+      padding: .1rem 1rem;
+
+    }
+
     
 
   
@@ -257,17 +262,17 @@ $desktop: 1200px;
   @media (min-width: $desktop) {
 
     .logo {
-      font-size: 5rem;
+      font-size: 3rem;
     }
     
     .menu {
       flex-direction: row;
       justify-content: flex-end; 
-      gap: 4.5rem;
+      gap: 3.5rem;
     }
   
     .menu li a {
-      font-size: 1rem;
+      font-size: .8rem;
       padding-right: 2rem;
   
       &:hover {
@@ -288,3 +293,5 @@ $desktop: 1200px;
     .logo a, .menu li a { color: #073763; } 
     .divider { background-color: #6e4bff; }
   }
+
+  

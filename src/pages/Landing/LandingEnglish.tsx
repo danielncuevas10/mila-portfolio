@@ -3,6 +3,7 @@ import { useLocation } from "react-router-dom";
 import { Navbar } from "../../components/Navbar/Navbar";
 import milaB from "../../assets/pictures/MilaB.svg";
 import math from "../../assets/pictures/math.png";
+import gmail from "../../assets/pictures/icons/gmail.png";
 import arrowDown from "../../assets/pictures/icons/prices/arrow-down.svg";
 import styles from "./Landing.module.scss";
 import Button from "../../components/Button/Button";
@@ -83,22 +84,22 @@ export const English = () => {
               With over 5 years of experience teaching English to students
               around the world, I’ve helped learners from Asia, Latin America,
               and Europe gain confidence and fluency in real-world
-              communication. Through individual tutoring, online lessons, and
-              university-level teaching, I’ve developed an approach that starts
-              with understanding each student’s background, goals, and learning
-              style.
-            </p>
-            <p>
-              My lessons focus on clarity, practice, and meaningful use of
-              English rather than rote memorization or passive lectures.
+              communication. I have also guided many students to successfully
+              prepare for and achieve strong results on standardized exams such
+              as TOEFL and IELTS. Through individual tutoring, online lessons,
+              and university-level teaching, I’ve developed an approach that
+              starts with understanding each student’s background, goals, and
+              learning style. My lessons focus on clarity, practice, and
+              meaningful use of English rather than rote memorization or passive
+              lectures.
             </p>
             <p>
               My academic background and broad tutoring experience allow me to
               support a wide range of learning goals—whether you’re preparing
-              for an exam, improving professional English, or building everyday
-              communication skills. I work alongside my students to create
-              personalized lesson plans that respect cultural differences and
-              help reveal their full learning potential.
+              for TOEFL or IELTS, improving professional English, or building
+              everyday communication skills. I work alongside my students to
+              create personalized lesson plans that respect cultural differences
+              and help reveal their full learning potential.
             </p>
           </div>
         </div>
@@ -233,6 +234,30 @@ export const English = () => {
             </div>
           </div>
         </div>
+      </div>
+
+      <div className={styles.footer} data-page="english">
+        <h2>Not sure if I'm for you?</h2>
+        <div className={styles.desktopFooter}>
+          <h3>
+            Let's have a free 15 minute conversation to discuss what would work
+            best for you .
+          </h3>
+
+          <div className={styles.footerGmail}>
+            <img src={gmail} alt="gmail icon" className={styles.gmailIcon} />
+            <div className={styles.footerGmail2}>
+              <h4>Send me an email to: </h4>
+              <h4>
+                <a href="mailto:mila.micovic26@gmail.com">
+                  mila.micovic26@gmail.com
+                </a>
+              </h4>
+            </div>
+          </div>
+        </div>
+
+        <p>© Designed and Developed by The Cave</p>
       </div>
     </div>
   );

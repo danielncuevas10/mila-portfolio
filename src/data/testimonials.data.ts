@@ -6,7 +6,7 @@ export const testimonials: Testimonials[] = [
     {id: "service1",
         icon: quote,
         title: "Mei Lin", 
-        description: "Math used to be very stressful for my son. After Mila's lessons, he started understanding the logic behind the problems instead of memorizing. His grades improved a lot.",
+        description: "Math used to be very stressful for my son. After Mila's lessons, he started understanding the logic behind the problems instead of memorizing. His grades improved exactly like I wanted them to.",
         parent: "Parent",
 
     },
@@ -27,7 +27,7 @@ export const testimonials: Testimonials[] = [
     {id: "service4", 
         icon: quote, 
         title: "Sarah Thompson", 
-        description: "Mila completely changed how I see math. Instead of guessing, I now understand the reasoning behind each solution, which helped me succeed in school and feel confident.",
+        description: "Mila completely changed how I see math. Instead of guessing, I now understand the reasoning behind each solution, which helped me succeed in school and feel confident during classes and exams.",
         parent: "Math student",
 
     },
@@ -40,14 +40,14 @@ export const testimonialsEnglish: Testimonials[] = [
     {id: "service1",
         icon: quoteb,
         title: "Hana Park", 
-        description: "My daughter used to be shy and afraid to speak English. After a few months, she started speaking confidently and even enjoyed her lessons. I could clearly see her progress, and her school results improved a lot.",
+        description: "My daughter used to be shy and afraid to speak English. After a few months, she started speaking confidently and even enjoyed her lessons. I could clearly see her progress, and her school results improved a lot. Thank you, Mila!",
         parent: "Parent",
 
     },
     {id: "service2", 
         icon: quoteb, 
         title: "Kevin Lee", 
-        description: "As a parent, I really appreciated how patient and encouraging the Mila is. My son now understands English instead of memorizing it, and he feels confident speaking in class and online with his professors and friends.",
+        description: "As a parent, I really appreciated how patient encouraging Mila is with my son during the lessons. He now understands English instead of memorizing it, and he feels confident speaking in class with his professors and friends.",
         parent: "Parent",
 
     },
@@ -61,7 +61,7 @@ export const testimonialsEnglish: Testimonials[] = [
     {id: "service4", 
         icon: quoteb, 
         title: "Maria Santos", 
-        description: "I needed English for my professional career, and Mila was exactly what I was looking for. My communication skills improved, and I now feel confident using English in meetings and interviews.",
+        description: "I needed English for my professional career, and Mila was exactly what I was looking for. My communication improved as well as my pronunciation and I now feel confident using English in meetings.",
         parent: "Student",
 
     },

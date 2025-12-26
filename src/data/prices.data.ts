@@ -5,18 +5,18 @@ export const prices: Prices[] = [
     {id: "service1",
         icon: arrowUp,
         title: "Basic Math", 
-        description: "Elementary school and high school mathematics and statistics. Algebra, Pre-calculus, Basic trigonometry and more.",
+        description: "Elementary school and early high school mathematics and statistics. Algebra, Pre-calculus, Basic trigonometry and more.",
         thePrice: "$45/hour"
     },
     {id: "service2", 
         icon: arrowUp, 
         title: "Advanced Math", 
-        description: "Calculus and university-level mathematics and statistics encouraging independent problem-solving",
+        description: "High school calculus and statistics encouraging independent problem-solving",
         thePrice: "$50/hour"
     },
     {id: "service3", 
         icon: arrowUp, 
-        title: "Exam Preparation", 
+        title: "University Math", 
         description: "Differential calculus, Integral calculus, multi-variable calculus, proofs, probability theory and more.",
         thePrice: "$50/hour"
     },

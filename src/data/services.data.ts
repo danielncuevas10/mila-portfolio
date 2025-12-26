@@ -63,7 +63,7 @@ export const servicesEnglish: Services[] = [
     },
     {id: "service3", 
         icon: upb, 
-        title: "Clear Progress & Confidence Growth", 
+        title: "Progress & Confidence Growth", 
         description: "Track your English improvement in speaking, listening, and understanding",
         bullets: [
             "Personal learning goals",
@@ -73,8 +73,8 @@ export const servicesEnglish: Services[] = [
     },
     {id: "service4", 
         icon: examb, 
-        title: "English Exam & Interview Preparation", 
-        description: "Targeted preparation for exams, interviews, and academic or professional English",
+        title: "TOEFL / IELTS Preparation", 
+        description: "Preparation for exams, interviews, and academic or professional English",
         bullets: [
             "Grammar & vocabulary strategy",
             "Speaking and writing practice",
