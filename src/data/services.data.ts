@@ -44,8 +44,8 @@ export const servicesEnglish: Services[] = [
         bullets: [
             "Real-time speaking practice",
             "Shared whiteboard & examples",
-            "Immediate feedback and correction",
-            "Pronunciation and accent guidance",
+            "Feedback and correction",
+            "Pronunciation guidance",
           ]
     },
     {id: "service2", 

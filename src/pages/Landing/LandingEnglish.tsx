@@ -86,20 +86,23 @@ export const English = () => {
               and Europe gain confidence and fluency in real-world
               communication. I have also guided many students to successfully
               prepare for and achieve strong results on standardized exams such
-              as TOEFL and IELTS. Through individual tutoring, online lessons,
-              and university-level teaching, I’ve developed an approach that
-              starts with understanding each student’s background, goals, and
-              learning style. My lessons focus on clarity, practice, and
-              meaningful use of English rather than rote memorization or passive
-              lectures.
+              as <span style={{ fontWeight: "bold" }}>TOEFL</span> and{" "}
+              <span style={{ fontWeight: "bold" }}>IELTS</span>. Through
+              individual tutoring, online lessons, and university-level
+              teaching, I’ve developed an approach that starts with
+              understanding each student’s background, goals, and learning
+              style. My lessons focus on clarity, practice, and meaningful use
+              of English rather than rote memorization or passive lectures.
             </p>
             <p>
               My academic background and broad tutoring experience allow me to
               support a wide range of learning goals—whether you’re preparing
-              for TOEFL or IELTS, improving professional English, or building
-              everyday communication skills. I work alongside my students to
-              create personalized lesson plans that respect cultural differences
-              and help reveal their full learning potential.
+              for <span style={{ fontWeight: "bold" }}>TOEFL</span> or{" "}
+              <span style={{ fontWeight: "bold" }}>IELTS</span>, improving
+              professional English, or building everyday communication skills. I
+              work alongside my students to create personalized lesson plans
+              that respect cultural differences and help reveal their full
+              learning potential.
             </p>
           </div>
         </div>
@@ -240,8 +243,9 @@ export const English = () => {
         <h2>Not sure if I'm for you?</h2>
         <div className={styles.desktopFooter}>
           <h3>
-            Let's have a free 15 minute conversation to discuss what would work
-            best for you .
+            I believe the best work comes from a great connection. If you're not
+            sure if I'm the right tutor for you, you can send me a request so we
+            can spend 15 minutes getting to know each other.
           </h3>
 
           <div className={styles.footerGmail}>
