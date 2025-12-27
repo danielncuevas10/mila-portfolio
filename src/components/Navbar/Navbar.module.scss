@@ -68,18 +68,33 @@ $desktop: 1200px;
 
       .divider {
         background-color: #a058fe;
-        padding: 0rem 1rem;
+        padding: 0rem 0rem;
         border-radius: .5rem;
+        &:hover {
+          background-color: #A0CDFF;
+
+        }
+
+
+
 
         @media (min-width: $desktop) {
-          padding: 0rem .3rem 0rem 1.5rem;
+          padding: 0rem .3rem 0rem 1.2rem;
         }
       }
 
       .divider a {
-        color: #faf9f9;
-        font-size: 1rem;
-        text-align: center;
+        font-size: 1.2rem;
+        font-weight: 500;
+        display: block;    /* Makes the link fill the width of the div */
+        width: 100%;       /* Ensures full horizontal coverage */
+        height: 100%;      /* Ensures full vertical coverage */
+        padding: .5rem 2rem; /* Add your "button" padding here instead of the div */
+        text-decoration: none;
+
+        @media (min-width: $desktop) {
+          padding: 0rem 1rem 0rem .3rem;
+        }
       }
     }
 
@@ -277,7 +292,7 @@ $desktop: 1200px;
   
       &:hover {
         color: #1E3A8A;
-        transform: scale(1.2);
+        transform: scale(1.1);
       }
     }
   }

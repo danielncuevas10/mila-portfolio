@@ -54,7 +54,7 @@ $desktop: 1200px;
         }
 
         @media (min-width: $desktop) {
-            font-size: 2rem;
+            font-size: 1.5rem;
             font-weight: 400;
             margin: 0;
         }
@@ -106,7 +106,7 @@ $desktop: 1200px;
         }
 
         @media (min-width: $desktop) {
-            padding: 1.5rem 1rem;
+            padding: 1.2rem 1rem;
             border-radius: 1rem;
         }
 
@@ -157,6 +157,8 @@ $desktop: 1200px;
 
         @media (min-width: $desktop) {
             width: 25%;
+            padding: 1rem .5rem;
+            font-size: 1.5rem;
 
             }
 

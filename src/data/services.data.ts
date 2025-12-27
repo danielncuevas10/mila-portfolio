@@ -24,7 +24,7 @@ export const services: Services[] = [
     {id: "service3", 
         icon: up, 
         title: "Progress Tracking", 
-        description: "I work with you to help you achieve your personal learning goals",
+        description: "Working with you to help you achieve your learning goals",
         bullets: ["Regular check-ins", "Review sessions", "Goal tracking"]
     },
     {id: "service4", 
@@ -74,7 +74,7 @@ export const servicesEnglish: Services[] = [
     {id: "service4", 
         icon: examb, 
         title: "TOEFL / IELTS Preparation", 
-        description: "Preparation for exams, interviews, and academic or professional English",
+        description: "Preparation for exams, interviews, and academic or professional English level",
         bullets: [
             "Grammar & vocabulary strategy",
             "Speaking and writing practice",

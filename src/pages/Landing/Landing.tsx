@@ -67,12 +67,16 @@ export const Landing = () => {
             <p>
               With over 6 years of teaching experience and a passion for
               learning, I’ve helped students discover their true capabilities
-              and achieve meaningful academic goals. I studied at the University
-              of British Columbia and am currently a master’s student in Data
-              Science in Europe, combining a strong academic foundation with
-              hands-on teaching experience. Through individual tutoring, online
-              lessons, and university-level teaching, I’ve developed an approach
-              that prioritizes understanding, practice, and adapting to each
+              and achieve meaningful academic goals. I studied at the{" "}
+              <span style={{ fontWeight: "bold" }}>
+                {" "}
+                University of British Columbia{" "}
+              </span>
+              and am currently a master’s student in Data Science in Europe,
+              combining a strong academic foundation with hands-on teaching
+              experience. Through individual tutoring, online lessons, and
+              university-level teaching, I’ve developed an approach that
+              prioritizes understanding, practice, and adapting to each
               student’s learning style rather than relying on memorization or
               passive lecturing.
             </p>
@@ -200,8 +204,9 @@ export const Landing = () => {
         <h2>Not sure if I'm for you?</h2>
         <div className={styles.desktopFooter}>
           <h3>
-            Let's have a free 15 minute conversation to discuss what would work
-            best for you .
+            I believe the best work comes from a great connection. If you're not
+            sure if I'm the right tutor for you, you can send me a request so we
+            can spend 15 minutes getting to know each other.
           </h3>
 
           <div className={styles.footerGmail}>

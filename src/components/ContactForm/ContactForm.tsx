@@ -1,6 +1,6 @@
 import { useState } from "react";
 import styles from "./ContactForm.module.scss";
-import emailjs from "@emailjs/browser";
+// remove: import emailjs from "@emailjs/browser";
 
 type FormState = {
   name: string;
@@ -33,7 +33,7 @@ export default function ContactForm({ variant = "default" }: Props) {
     e.preventDefault();
     setLoading(true);
 
-    const templateParams = {
+    const payload = {
       name: form.name,
       subject: form.subject,
       email: form.email,
@@ -41,27 +41,24 @@ export default function ContactForm({ variant = "default" }: Props) {
     };
 
     try {
-      // Send email to Mila (owner)
-      await emailjs.send(
-        import.meta.env.VITE_EMAILJS_SERVICE_ID,
-        import.meta.env.VITE_EMAILJS_TEMPLATE_OWNER,
-        templateParams,
-        import.meta.env.VITE_EMAILJS_PUBLIC_KEY
-      );
+      const res = await fetch("/api/send-email", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(payload),
+      });
 
-      // Send confirmation email to the user
-      await emailjs.send(
-        import.meta.env.VITE_EMAILJS_SERVICE_ID,
-        import.meta.env.VITE_EMAILJS_TEMPLATE_USER,
-        templateParams,
-        import.meta.env.VITE_EMAILJS_PUBLIC_KEY
-      );
+      const data = await res.json();
 
-      alert("Message sent successfully!");
-      setForm({ name: "", subject: "", email: "", message: "" });
+      if (!res.ok) {
+        console.error("Server error:", data);
+        alert("Something went wrong. Please check console.");
+      } else {
+        alert("Message sent successfully!");
+        setForm({ name: "", subject: "", email: "", message: "" });
+      }
     } catch (error) {
-      console.error("EmailJS error:", error);
-      alert("Something went wrong. Please try again.");
+      console.error("Network error:", error);
+      alert("Network error. Please try again.");
     } finally {
       setLoading(false);
     }
