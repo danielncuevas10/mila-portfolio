@@ -1,6 +1,5 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import styles from "./ContactForm.module.scss";
-import emailjs from "@emailjs/browser";
 
 type FormState = {
   name: string;
@@ -21,15 +20,6 @@ export default function ContactForm({ variant = "default" }: Props) {
     message: "",
   });
   const [loading, setLoading] = useState(false);
-
-  const SERVICE_ID = import.meta.env.VITE_EMAILJS_SERVICE_ID;
-  const TEMPLATE_OWNER = import.meta.env.VITE_EMAILJS_TEMPLATE_OWNER;
-  const TEMPLATE_USER = import.meta.env.VITE_EMAILJS_TEMPLATE_USER;
-  const PUBLIC_KEY = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
-
-  useEffect(() => {
-    if (PUBLIC_KEY) emailjs.init(PUBLIC_KEY);
-  }, []);
 
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
