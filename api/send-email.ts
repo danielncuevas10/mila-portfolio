@@ -1,5 +1,9 @@
 import sgMail from "@sendgrid/mail";
 
+// Use your verified sender from SendGrid here
+const VERIFIED_SENDER = process.env.SENDER_EMAIL!;
+const OWNER_EMAIL = process.env.OWNER_EMAIL!;
+
 sgMail.setApiKey(process.env.SENDGRID_API_KEY!);
 
 type EmailBody = {
@@ -36,16 +40,16 @@ export async function POST(req: Request) {
   try {
     // Send email to owner
     await sgMail.send({
-      to: process.env.OWNER_EMAIL!,
-      from: process.env.SENDER_EMAIL!,
+      to: OWNER_EMAIL,
+      from: VERIFIED_SENDER, // must be your verified sender
       subject: `New message from ${name}: ${subject}`,
       text: `From: ${name} <${email}>\n\n${message}`,
     });
 
-    // Optional: confirmation to user
+    // Send confirmation to the user (from verified sender)
     await sgMail.send({
       to: email,
-      from: process.env.SENDER_EMAIL!,
+      from: VERIFIED_SENDER, // still your verified sender
       subject: "Thanks for contacting us",
       text: `Hi ${name}, we received your message:\n\n${message}`,
     });
