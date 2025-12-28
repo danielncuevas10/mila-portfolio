@@ -1,5 +1,6 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import styles from "./ContactForm.module.scss";
+import emailjs from "@emailjs/browser";
 
 type FormState = {
   name: string;
@@ -19,42 +20,46 @@ export default function ContactForm({ variant = "default" }: Props) {
     email: "",
     message: "",
   });
-
   const [loading, setLoading] = useState(false);
+
+  const SERVICE_ID = import.meta.env.VITE_EMAILJS_SERVICE_ID;
+  const TEMPLATE_OWNER = import.meta.env.VITE_EMAILJS_TEMPLATE_OWNER;
+  const TEMPLATE_USER = import.meta.env.VITE_EMAILJS_TEMPLATE_USER;
+  const PUBLIC_KEY = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
+
+  useEffect(() => {
+    if (PUBLIC_KEY) emailjs.init(PUBLIC_KEY);
+  }, []);
 
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
   ) => {
-    setForm((prev) => ({
-      ...prev,
-      [e.target.name]: e.target.value,
-    }));
+    setForm((prev) => ({ ...prev, [e.target.name]: e.target.value }));
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setLoading(true);
 
-    try {
-      const res = await fetch("/api/send-email", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          name: form.name,
-          email: form.email,
-          subject: form.subject,
-          message: form.message,
-        }),
-      });
+    const templateParams = {
+      name: form.name,
+      email: form.email,
+      subject: form.subject,
+      message: form.message,
+      owner_email: import.meta.env.VITE_OWNER_EMAIL,
+    };
 
-      if (!res.ok) {
-        throw new Error("Failed to send");
-      }
+    try {
+      // Send email to Mila (owner)
+      await emailjs.send(SERVICE_ID, TEMPLATE_OWNER, templateParams);
+
+      // Send confirmation email to user
+      await emailjs.send(SERVICE_ID, TEMPLATE_USER, templateParams);
 
       alert("Message sent successfully!");
       setForm({ name: "", subject: "", email: "", message: "" });
     } catch (err) {
-      console.error(err);
+      console.error("EmailJS error:", err);
       alert("Something went wrong. Please try again.");
     } finally {
       setLoading(false);
@@ -68,34 +73,35 @@ export default function ContactForm({ variant = "default" }: Props) {
       }`}
       onSubmit={handleSubmit}
     >
-      <h3>Your name:</h3>
-      <input name="name" value={form.name} onChange={handleChange} required />
-
-      <h3>Subject:</h3>
+      <input
+        name="name"
+        placeholder="Your name"
+        value={form.name}
+        onChange={handleChange}
+        required
+      />
       <input
         name="subject"
+        placeholder="Subject"
         value={form.subject}
         onChange={handleChange}
         required
       />
-
-      <h3>Your email:</h3>
       <input
         type="email"
         name="email"
+        placeholder="Your email"
         value={form.email}
         onChange={handleChange}
         required
       />
-
-      <h3>Message:</h3>
       <textarea
         name="message"
+        placeholder="Message"
         value={form.message}
         onChange={handleChange}
         required
       />
-
       <button type="submit" disabled={loading}>
         {loading ? "Sending..." : "Send"}
       </button>
