@@ -109,9 +109,7 @@ export const Landing = () => {
           <h2>Services</h2>
           <p>
             I help students truly understand mathematics instead of memorizing
-            formulas. Lessons focus on clarity, logical thinking, and
-            step-by-step problem solving, so you gain skills that carry over
-            into exams.
+            formulas. Lessons focus on clarity and step-by-step problem solving.
           </p>
 
           <div className={styles.servicesList}>

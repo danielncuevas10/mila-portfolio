@@ -1,6 +1,5 @@
 import { useState } from "react";
 import styles from "./ContactForm.module.scss";
-// remove: import emailjs from "@emailjs/browser";
 
 type FormState = {
   name: string;
@@ -26,39 +25,37 @@ export default function ContactForm({ variant = "default" }: Props) {
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
   ) => {
-    setForm({ ...form, [e.target.name]: e.target.value });
+    setForm((prev) => ({
+      ...prev,
+      [e.target.name]: e.target.value,
+    }));
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setLoading(true);
 
-    const payload = {
-      name: form.name,
-      subject: form.subject,
-      email: form.email,
-      message: form.message,
-    };
-
     try {
       const res = await fetch("/api/send-email", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(payload),
+        body: JSON.stringify({
+          name: form.name,
+          email: form.email,
+          subject: form.subject,
+          message: form.message,
+        }),
       });
 
-      const data = await res.json();
-
       if (!res.ok) {
-        console.error("Server error:", data);
-        alert("Something went wrong. Please check console.");
-      } else {
-        alert("Message sent successfully!");
-        setForm({ name: "", subject: "", email: "", message: "" });
+        throw new Error("Failed to send");
       }
-    } catch (error) {
-      console.error("Network error:", error);
-      alert("Network error. Please try again.");
+
+      alert("Message sent successfully!");
+      setForm({ name: "", subject: "", email: "", message: "" });
+    } catch (err) {
+      console.error(err);
+      alert("Something went wrong. Please try again.");
     } finally {
       setLoading(false);
     }
@@ -72,18 +69,11 @@ export default function ContactForm({ variant = "default" }: Props) {
       onSubmit={handleSubmit}
     >
       <h3>Your name:</h3>
-      <input
-        name="name"
-        placeholder="Your name"
-        value={form.name}
-        onChange={handleChange}
-        required
-      />
+      <input name="name" value={form.name} onChange={handleChange} required />
 
       <h3>Subject:</h3>
       <input
         name="subject"
-        placeholder="Your subject"
         value={form.subject}
         onChange={handleChange}
         required
@@ -93,7 +83,6 @@ export default function ContactForm({ variant = "default" }: Props) {
       <input
         type="email"
         name="email"
-        placeholder="Your email"
         value={form.email}
         onChange={handleChange}
         required
@@ -102,7 +91,6 @@ export default function ContactForm({ variant = "default" }: Props) {
       <h3>Message:</h3>
       <textarea
         name="message"
-        placeholder="Your message"
         value={form.message}
         onChange={handleChange}
         required

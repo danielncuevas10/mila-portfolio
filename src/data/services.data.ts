@@ -40,7 +40,7 @@ export const servicesEnglish: Services[] = [
     {id: "service1",
         icon: camerab,
         title: "Live English Speaking Lessons", 
-        description: "Sessions focused conversation, clear pronunciation, and communication",
+        description: "Sessions focused on conversations and clear communication",
         bullets: [
             "Real-time speaking practice",
             "Shared whiteboard & examples",

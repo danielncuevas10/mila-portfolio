@@ -130,8 +130,7 @@ export const English = () => {
           <p>
             I help students use English with confidence in real situations.
             Lessons are practical, interactive, and designed to improve
-            speaking, understanding, and communication from the very first
-            class.
+            speaking.
           </p>
 
           <div className={styles.servicesList}>

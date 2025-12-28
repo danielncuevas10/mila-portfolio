@@ -529,18 +529,18 @@ html {
   p {
     color: #555;
     text-align: center;
-    font-size: .8rem;
+    font-size: 1rem;
     font-weight: 200;
     padding: .5rem 1rem;
 
     @media (min-width: $tablet) {
-      font-size: 1.2rem;
+      font-size: 1rem;
       font-weight: 300;
     }
 
     @media (min-width: $tablet-pro) {
+      font-size: 1rem;
       font-weight: 300;
-      font-size: 1.5rem;
     }
     
     /* 4 columns on desktop */
@@ -560,6 +560,7 @@ html {
     h2 {
       color: #1E3A8A;
     }
+
   }
 }
 
@@ -748,6 +749,13 @@ html {
     &.english {
       background-color: #144b89;
       border: .5px solid #1E3A8A;
+
+      h3 {
+        color: rgba(255, 255, 255, 0.784);
+        padding-left: 1rem;
+        font-weight: 200;
+        font-size: 1.1rem;
+      }
     }
 
     h3 {
