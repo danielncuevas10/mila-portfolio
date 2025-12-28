@@ -1,88 +1,58 @@
+import sgMail from "@sendgrid/mail";
 
-type SendBody = {
+sgMail.setApiKey(process.env.SENDGRID_API_KEY!);
+
+type EmailBody = {
   name: string;
   email: string;
   subject?: string;
   message: string;
 };
 
-function isSendBody(x: unknown): x is SendBody {
+function isEmailBody(obj: any): obj is EmailBody {
   return (
-    typeof x === "object" &&
-    x !== null &&
-    typeof (x as any).name === "string" &&
-    typeof (x as any).email === "string" &&
-    typeof (x as any).message === "string"
+    obj &&
+    typeof obj.name === "string" &&
+    typeof obj.email === "string" &&
+    typeof obj.message === "string"
   );
 }
 
 export async function POST(req: Request) {
+  let body: unknown;
+
   try {
-    const body = await req.json();
-    if (!isSendBody(body)) {
-      return new Response("Missing fields", { status: 400 });
-    }
+    body = await req.json();
+  } catch {
+    return new Response("Invalid JSON", { status: 400 });
+  }
 
-    const SERVICE_ID = process.env.EMAILJS_SERVICE_ID;
-    const TEMPLATE_OWNER = process.env.EMAILJS_TEMPLATE_OWNER;
-    const TEMPLATE_USER = process.env.EMAILJS_TEMPLATE_USER;
-    const USER_ID = process.env.EMAILJS_USER_ID; // EmailJS user/public id
-    const OWNER_EMAIL = process.env.OWNER_EMAIL ?? "";
+  if (!isEmailBody(body)) {
+    return new Response("Missing required fields", { status: 400 });
+  }
 
-    if (!SERVICE_ID || !TEMPLATE_OWNER || !TEMPLATE_USER || !USER_ID) {
-      console.error("Missing EmailJS env vars", { SERVICE_ID, TEMPLATE_OWNER, TEMPLATE_USER, USER_ID });
-      return new Response("Server not configured", { status: 500 });
-    }
+  const { name, email, subject = "", message } = body;
 
-    const templateParams = {
-      name: body.name,
-      email: body.email,
-      subject: body.subject ?? "",
-      message: body.message,
-      owner_email: OWNER_EMAIL, // optional if your template uses it
-    };
-
-    // 1) send to owner
-    const ownerResp = await fetch("https://api.emailjs.com/api/v1.0/email/send", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({
-        service_id: SERVICE_ID,
-        template_id: TEMPLATE_OWNER,
-        user_id: USER_ID,
-        template_params: templateParams,
-      }),
+  try {
+    // Send email to owner
+    await sgMail.send({
+      to: process.env.OWNER_EMAIL!,
+      from: process.env.SENDER_EMAIL!,
+      subject: `New message from ${name}: ${subject}`,
+      text: `From: ${name} <${email}>\n\n${message}`,
     });
 
-    if (!ownerResp.ok) {
-      const text = await ownerResp.text();
-      console.error("Owner send failed:", ownerResp.status, text);
-      return new Response(`Owner send failed: ${text}`, { status: 502 });
-    }
-
-    // 2) send confirmation to user
-    const userResp = await fetch("https://api.emailjs.com/api/v1.0/email/send", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({
-        service_id: SERVICE_ID,
-        template_id: TEMPLATE_USER,
-        user_id: USER_ID,
-        template_params: templateParams, // ensure your user-template uses {{email}} or {{name}} as variables
-      }),
+    // Optional: confirmation to user
+    await sgMail.send({
+      to: email,
+      from: process.env.SENDER_EMAIL!,
+      subject: "Thanks for contacting us",
+      text: `Hi ${name}, we received your message:\n\n${message}`,
     });
-
-    if (!userResp.ok) {
-      const text = await userResp.text();
-      console.error("User send failed:", userResp.status, text);
-      // owner already got it — return 207 or 200 with warning. I'll return 200 but report the issue.
-      return new Response("Sent to owner; failed to send confirmation to user", { status: 200 });
-    }
 
     return new Response("OK", { status: 200 });
   } catch (err) {
-    console.error("Unexpected error:", err);
-    return new Response("Server error", { status: 500 });
+    console.error("SendGrid error:", err);
+    return new Response("Error sending email", { status: 500 });
   }
 }
-

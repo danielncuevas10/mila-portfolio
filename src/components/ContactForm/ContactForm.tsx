@@ -41,25 +41,19 @@ export default function ContactForm({ variant = "default" }: Props) {
     e.preventDefault();
     setLoading(true);
 
-    const templateParams = {
-      name: form.name,
-      email: form.email,
-      subject: form.subject,
-      message: form.message,
-      owner_email: import.meta.env.VITE_OWNER_EMAIL,
-    };
-
     try {
-      // Send email to Mila (owner)
-      await emailjs.send(SERVICE_ID, TEMPLATE_OWNER, templateParams);
+      const res = await fetch("/api/send-email", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(form),
+      });
 
-      // Send confirmation email to user
-      await emailjs.send(SERVICE_ID, TEMPLATE_USER, templateParams);
+      if (!res.ok) throw new Error("Send failed");
 
       alert("Message sent successfully!");
       setForm({ name: "", subject: "", email: "", message: "" });
     } catch (err) {
-      console.error("EmailJS error:", err);
+      console.error(err);
       alert("Something went wrong. Please try again.");
     } finally {
       setLoading(false);
