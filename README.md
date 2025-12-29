@@ -1,4 +1,4 @@
-#Mila Tutoring
+# Mila Tutoring
 
 Mila Tutoring is a modern, responsive tutoring website built with Vite, TypeScript, HTML, and SCSS.
 It presents a clean and professional online presence for a private Math and English teacher, designed to clearly communicate services, pricing, and contact information.
