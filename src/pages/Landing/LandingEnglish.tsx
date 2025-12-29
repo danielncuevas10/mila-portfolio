@@ -15,7 +15,6 @@ import { featureEnglish } from "../../data/features.data";
 import { servicesEnglish } from "../../data/services.data";
 import { testimonialsEnglish } from "../../data/testimonials.data";
 import { pricesEnglish } from "../../data/prices.data";
-import ContactForm from "../../components/ContactForm/ContactForm";
 
 export const English = () => {
   const location = useLocation();
@@ -224,15 +223,28 @@ export const English = () => {
       <div id="contact">
         <div className={`${styles.contactMe} ${styles.english}`}>
           <div className={styles.contactMeText}>
-            <h1>Contact me</h1>
+            <h1>Contact Me</h1>
             <p>
-              I'm always interested in discussing new research ideas, potential
-              collaborations, and opportunities to mentor graduate students in
-              mathematics.
+              I help students understand mathematics in a clear and supportive
+              way, building strong foundations and confidence over time. Parents
+              and students are welcome to get in touch to discuss lessons,
+              learning goals, or any questions they may have.
             </p>
 
-            <div className={`${styles.form} ${styles.english}`}>
-              <ContactForm variant="english" />
+            <div className={styles.footerGmail}>
+              <h4>Get in touch:</h4>
+
+              <a
+                href="mailto:mila.micovic26@gmail.com"
+                className={styles.footerGmailRow}
+              >
+                <img
+                  src={gmail}
+                  alt="gmail icon"
+                  className={styles.gmailIcon}
+                />
+                <span>mila.micovic26@gmail.com</span>
+              </a>
             </div>
           </div>
         </div>
@@ -246,18 +258,6 @@ export const English = () => {
             sure if I'm the right tutor for you, you can send me a request so we
             can spend 15 minutes getting to know each other.
           </h3>
-
-          <div className={styles.footerGmail}>
-            <img src={gmail} alt="gmail icon" className={styles.gmailIcon} />
-            <div className={styles.footerGmail2}>
-              <h4>Send me an email to: </h4>
-              <h4>
-                <a href="mailto:mila.micovic26@gmail.com">
-                  mila.micovic26@gmail.com
-                </a>
-              </h4>
-            </div>
-          </div>
         </div>
 
         <p>© Designed and Developed by The Cave</p>
