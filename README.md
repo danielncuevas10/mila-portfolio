@@ -15,4 +15,4 @@ The site includes dedicated sections for:
 
 The project focuses on clarity, accessibility, and performance, with a minimalist design that keeps the attention on content and usability. It is deployed on Vercel and optimized for both desktop and mobile devices.
 
-Live website: https://mila-tutoring.vercel.app/
+Live website: https://www.milatutoring.com/
