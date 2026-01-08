@@ -64,28 +64,33 @@ export const Landing = () => {
             <h2>About Me</h2>
             <h3>Dedicated to Your Academic Success</h3>
             <p>
-              With over 6 years of teaching experience and a passion for
-              learning, I’ve helped students discover their true capabilities
-              and achieve meaningful academic goals. I studied at the{" "}
+              With over 6 years of teaching experience combined with a
+              Mathematics Degree from the{" "}
               <span style={{ fontWeight: "bold" }}>
                 {" "}
-                University of British Columbia{" "}
+                University of British Columbia
               </span>
-              and am currently a master’s student in Data Science in Europe,
-              combining a strong academic foundation with hands-on teaching
-              experience. Through individual tutoring, online lessons, and
-              university-level teaching, I’ve developed an approach that
-              prioritizes understanding, practice, and adapting to each
-              student’s learning style rather than relying on memorization or
-              passive lecturing.
+              , I’ve helped students discover their true capabilities and
+              achieve meaningful academic goals.
             </p>
             <p>
-              With a formal background in mathematics and experience tutoring a
-              wide range of subjects, I can help you achieve your learning
-              goals—whether that means exam preparation, strengthening
-              fundamentals, or developing practical, real-world skills. I work
-              alongside my students to build personalized learning plans that
-              turn complex ideas into confidence and clarity.
+              My strong academic foundation along with my hands-on teaching
+              experience gives me the base needed to help you succeed. Through
+              individual tutoring, online lessons, and university-level
+              teaching, I’ve developed an approach that prioritizes
+              understanding, practice, and adapting to each student’s learning
+              style rather than relying on memorization or passive lecturing. My
+              own academic experience which is ongoing as a Master's Student,
+              gives me a layer of empathy and understanding which is key to
+              developing a connection that will allow us to succeed together.
+            </p>
+
+            <p>
+              I can help you achieve your learning goals—whether that means exam
+              preparation, strengthening fundamentals, or developing practical,
+              real-world skills. I work alongside my students to build
+              personalized learning plans that turn complex ideas into
+              confidence and clarity
             </p>
           </div>
         </div>

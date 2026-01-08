@@ -12,7 +12,7 @@ export const testimonials: Testimonials[] = [
     },
     {id: "service2", 
         icon: quote, 
-        title: "Li Wei", 
+        title: "Rita Wei", 
         description: "What impressed me most was how clearly concepts were explained. My daughter no longer feels anxious about math tests, and she now approaches problems logically, she understands math now.",
         parent: "Parent",
 

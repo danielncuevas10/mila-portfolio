@@ -1,13 +1,18 @@
 import { Routes, Route } from "react-router-dom";
 import { Landing } from "./pages/Landing/Landing";
 import { English } from "./pages/Landing/LandingEnglish";
+import Analytics from "./Analytics";
 
 function App() {
   return (
-    <Routes>
-      <Route path="/" element={<Landing />} />
-      <Route path="/english" element={<English />} />
-    </Routes>
+    <>
+      <Analytics />
+
+      <Routes>
+        <Route path="/" element={<Landing />} />
+        <Route path="/english" element={<English />} />
+      </Routes>
+    </>
   );
 }
 
