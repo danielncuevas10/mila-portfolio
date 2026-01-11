@@ -13,6 +13,11 @@ The site includes dedicated sections for:
 
 - Contact and inquiries
 
-The project focuses on clarity, accessibility, and performance, with a minimalist design that keeps the attention on content and usability. It is deployed on Vercel and optimized for both desktop and mobile devices.
+## Data-Driven Growth
+
+To help the tutor grow their reach and engagement, I added Google Analytics. This allows the tutor to identify specific student niches and geographical interest points. By tracking these insights, the tutor can understand where their potential students are coming from and continuously refine the content to improve user engagement and conversion.
+
+Everything about the site is designed to be easy to use. It’s built for speed and accessibility, working nicely across all devices—from mobile phones to tablets and desktops to make sure nothing stands in the way of a student getting the help they need.
+
 
 Live website: https://www.milatutoring.com/
