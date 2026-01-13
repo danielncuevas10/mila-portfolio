@@ -1,13 +1,10 @@
 import { Routes, Route } from "react-router-dom";
 import { Landing } from "./pages/Landing/Landing";
 import { English } from "./pages/Landing/LandingEnglish";
-import Analytics from "./Analytics";
 
 function App() {
   return (
     <>
-      <Analytics />
-
       <Routes>
         <Route path="/" element={<Landing />} />
         <Route path="/english" element={<English />} />
