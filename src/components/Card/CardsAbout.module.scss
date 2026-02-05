@@ -1,29 +1,38 @@
 $tablet: 768px;      // iPad
 $tablet-pro: 1024px; // iPad Pro
 $desktop: 1200px;
+$main-color: #1A365D;
+$main-text: #0F172A;
+$main-grey: #334155;
+
 
 
 .card {
-    background-color: rgb(255, 255, 255);
-    border: 1px solid #f884790e;
-    margin: 2rem .5rem;
-    border-radius: 1rem;    
-    padding: .5rem;        
-    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.19);
     text-decoration: none;
     list-style: none;
+    background-color: #FCFBF7;
+
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 0.8s cubic-bezier(0.22, 1, 0.36, 1), 
+    transform 1s cubic-bezier(0.22, 1, 0.36, 1);
+
+      &.appear {          
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+    
 
 
     .row {
-        display: flex;
-        gap: 1rem;
-        align-items: center; // keeps image + text aligned nicely at the top
+      padding: 1.5rem;
       }
       
       .row img {
-        height: 5rem;
-        width: 4rem;
-        border-radius: .5rem;
+        height: 3rem;
+        width: 3rem;
+        
       }
       
       .text {
@@ -39,45 +48,32 @@ $desktop: 1200px;
 
     .title {
         margin: 0.5rem 0 0 0;   
+        font-family: 'Inter', sans-serif;
         text-align: left;     
         width: 100%;
         padding: 0;
+        color: $main-color;
         font-size: 1.2rem;
-        color: #000000;
-        font-size: 1.2rem;
-        font-weight: 400;
-        padding: .5rem .5rem 0rem 0rem;
+        font-weight: 900;
+        letter-spacing: .1rem;
+
     }
 
 
 
       p {
-        width: 100%;
         padding: 0;
-        text-align: justify;
+        font-family: 'Inter', sans-serif;
         font-size: 1rem;
-        color: #7f7f7f;
-        font-weight: 300;
-      }
-
-    ul {
-        padding-left: .8rem;
-        margin: 0.2rem 0 0 0;
-        font-size: .9rem;
-        font-weight: 200;
-        color: #7f7f7f;
-    }
-
-    ul li::marker {
-        font-size: 0.5rem;       // smaller bullet
-        color: #7d7d7d;             // optional: change color
+        color: $main-grey;
+        font-weight: 400;
       }
 
 
     &:hover {
         box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
         transition: 0.3s;
-        background-color: #f8847916;
+        background-color: #fffff9;
 
         &.english {
           box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(82, 79, 79, 0.19);
@@ -86,7 +82,9 @@ $desktop: 1200px;
       }
     }
 
-    @media (min-width: $tablet-pro) {
+    @media (min-width: $tablet) {
+
+      
 
       .title {
         font-size: 1.8rem;
@@ -104,9 +102,5 @@ $desktop: 1200px;
 
   }
 
-  @media (min-width: $tablet-pro) {
-      font-size: 1.2rem;
-
-  }
 
 }

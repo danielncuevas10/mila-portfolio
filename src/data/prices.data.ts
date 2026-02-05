@@ -12,7 +12,8 @@ export const prices: Prices[] = [
         icon: arrowUp, 
         title: "Advanced Math", 
         description: "High school calculus and statistics encouraging independent problem-solving",
-        thePrice: "$50/hour"
+        thePrice: "$50/hour",
+        isPopular: true,
     },
     {id: "service3", 
         icon: arrowUp, 
@@ -32,25 +33,26 @@ export const prices: Prices[] = [
 export const pricesEnglish: Prices[] = [
     {id: "service1",
         icon: arrowUp,
-        title: "English Foundations - A1/A2", 
+        title: "Essential Fluency", 
         description: "Build strong foundations in speaking, listening, and everyday communication",
         thePrice: "$30/hour"
     },
     {id: "service2", 
         icon: arrowUp, 
-        title: "Advanced English - B1/B2", 
+        title: "Professional Mastery", 
         description: "Refine grammar, vocabulary, and natural expression for academic and professional use",
         thePrice: "$30/hour"
     },
     {id: "service3", 
         icon: arrowUp, 
-        title: "Academic English Success", 
+        title: "The Scholar’s Edge", 
         description: "Clear explanations and practice designed for essay writing and academic performance",
-        thePrice: "$40/hour"
+        thePrice: "$40/hour",
+        isPopular: true,
     },
     {id: "service4", 
         icon: arrowUp, 
-        title: "English Exam Preparation", 
+        title: "Claim Mastery", 
         description: "Advanced English focused on exams, presentations, interviews, and professional communication",
         thePrice: "$40/hour"
     },

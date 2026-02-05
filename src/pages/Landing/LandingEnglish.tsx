@@ -1,9 +1,8 @@
 import React, { useEffect } from "react";
 import { useLocation } from "react-router-dom";
 import { Navbar } from "../../components/Navbar/Navbar";
-import milaB from "../../assets/pictures/MilaB.svg";
-import math from "../../assets/pictures/math.png";
-import gmail from "../../assets/pictures/icons/gmail.png";
+import mila from "../../assets/pictures/Mila.svg";
+import book from "../../assets/pictures/icons/book.png";
 import arrowDown from "../../assets/pictures/icons/prices/arrow-down.svg";
 import styles from "./Landing.module.scss";
 import Button from "../../components/Button/Button";
@@ -23,7 +22,6 @@ export const English = () => {
   useEffect(() => {
     if (!location.hash) return;
     const id = location.hash.replace("#", "");
-    // try immediately, otherwise try once after a tiny delay (element might render slightly later)
     const el = document.getElementById(id);
     if (el) {
       el.scrollIntoView({ behavior: "smooth" });
@@ -51,14 +49,13 @@ export const English = () => {
       <div id="hero">
         <div className={styles.hero}>
           <div className={styles.heroTitles}>
-            <h1 className={styles.mainTitle}>English Teacher</h1>
-            <h2 className={styles.subTitle}>
-              Exploring the Power or Learning a New Language
-            </h2>
+            <h1 className={styles.mainTitle}>Mastering Expression.</h1>
+            <h2 className={styles.subTitle}>PREMIUM ENGLISH TUTORING</h2>
+
             <p>
-              Personalized online tutoring that adapts to your learning style.
-              Get one-on-one attention, flexible scheduling, and proven results
-              that help you achieve your bilingual goals.
+              Personalized mentorship designed for students who demand
+              excellence in English. From academic writing to fluent
+              conversation, we build the foundations of a global communicator.
             </p>
             <Button className={styles.desktopButton} onClick={goToContact}>
               Contact me
@@ -66,8 +63,9 @@ export const English = () => {
           </div>
 
           <div className={styles.mainPicture}>
-            <img src={milaB} alt="Grogu" className={styles.groguImage} />
+            <img src={mila} alt="Grogu" className={styles.groguImage} />
           </div>
+
           <Button className={styles.phoneButton} onClick={goToContact}>
             Contact me
           </Button>
@@ -80,28 +78,18 @@ export const English = () => {
             <h2>About Me</h2>
             <h3>Dedicated to Your Academic Success</h3>
             <p>
-              With over 5 years of experience teaching English to students
-              around the world, I’ve helped learners from Asia, Latin America,
-              and Europe gain confidence and fluency in real-world
-              communication. I have also guided many students to successfully
-              prepare for and achieve strong results on standardized exams such
-              as <span style={{ fontWeight: "bold" }}>TOEFL</span> and{" "}
-              <span style={{ fontWeight: "bold" }}>IELTS</span>. Through
-              individual tutoring, online lessons, and university-level
-              teaching, I’ve developed an approach that starts with
-              understanding each student’s background, goals, and learning
-              style. My lessons focus on clarity, practice, and meaningful use
-              of English rather than rote memorization or passive lectures.
+              With over five years of international experience, I provide more
+              than just English lessons—I offer a gateway to global
+              communication. Having mentored learners across Europe, Asia, and
+              Latin America, I specialize in transforming complex language into
+              a natural, intuitive skill.
             </p>
             <p>
-              My academic background and broad tutoring experience allow me to
-              support a wide range of learning goals—whether you’re preparing
-              for <span style={{ fontWeight: "bold" }}>TOEFL</span> or{" "}
-              <span style={{ fontWeight: "bold" }}>IELTS</span>, improving
-              professional English, or building everyday communication skills. I
-              work alongside my students to create personalized lesson plans
-              that respect cultural differences and help reveal their full
-              learning potential.
+              My approach moves beyond rote memorization, focusing on the
+              cultural nuances and strategic communication required for success
+              in university settings and standardized exams like
+              <span style={{ fontWeight: "bold" }}>TOEFL</span> and{" "}
+              <span style={{ fontWeight: "bold" }}>IELTS</span>.
             </p>
           </div>
         </div>
@@ -119,25 +107,18 @@ export const English = () => {
         </div>
       </div>
 
-      <div className={`${styles.mathMain} ${styles.english}`}>
-        <img src={math} alt="Grogu" className={styles.mathImage} />
-      </div>
-
       <div id="services">
         <div className={`${styles.services} ${styles.english}`}>
-          <h2>Services</h2>
-          <p>
-            I help students use English with confidence in real situations.
-            Lessons are practical, interactive, and designed to improve
-            speaking.
-          </p>
+          <h2>Educational Pillars</h2>
+          <p>Refined English mentorship designed for the global stage.</p>
 
           <div className={styles.servicesList}>
-            {servicesEnglish.map((service) => (
+            {servicesEnglish.map((service, index) => (
               <ServicesCard
                 key={service.id}
                 feature={service}
                 variant="english"
+                index={index}
               />
             ))}
           </div>
@@ -147,10 +128,7 @@ export const English = () => {
       <div id="testimonials">
         <div className={`${styles.testimonials} ${styles.english}`}>
           <h2>Testimonials</h2>
-          <p>
-            Real feedback from students who've transformed their learning
-            experience
-          </p>
+          <p>Real feedback from students who've enhanced their learning</p>
           <div className={styles.testimonialsList}>
             {testimonialsEnglish.map((testimonial) => (
               <TestimonialsCard
@@ -166,7 +144,7 @@ export const English = () => {
       <div id="prices">
         <div className={`${styles.prices} ${styles.english}`}>
           <h2>Prices</h2>
-          <h4>All the prices are shown in Canadian Dollars.</h4>
+          <p>Investment in academic excellence. All rates are quoted in CAD.</p>
 
           <div className={`${styles.priceDesktop} ${styles.english}`}>
             {pricesEnglish.map((price) => (
@@ -223,40 +201,33 @@ export const English = () => {
       <div id="contact">
         <div className={`${styles.contactMe} ${styles.english}`}>
           <div className={styles.contactMeText}>
-            <h1>Contact Me</h1>
+            <h1>Begin Your Journey</h1>
             <p>
-              I help students understand mathematics in a clear and supportive
-              way, building strong foundations and confidence over time. Parents
-              and students are welcome to get in touch to discuss lessons,
-              learning goals, or any questions they may have.
+              I invite parents and students to reach out for a private
+              discussion regarding academic goals.
             </p>
 
-            <div className={styles.footerGmail}>
-              <h4>Get in touch:</h4>
+            <img src={book} alt="book icon" className={styles.bookIcon} />
 
+            <div className={styles.theLine}>
               <a
                 href="mailto:mila.micovic26@gmail.com"
                 className={styles.footerGmailRow}
               >
-                <img
-                  src={gmail}
-                  alt="gmail icon"
-                  className={styles.gmailIcon}
-                />
                 <span>mila.micovic26@gmail.com</span>
               </a>
+              <hr />
             </div>
           </div>
         </div>
       </div>
 
-      <div className={styles.footer} data-page="english">
-        <h2>Not sure if I'm for you?</h2>
+      <div className={`${styles.footer} ${styles.english}`}>
+        <h2>Complementary Consultation</h2>
         <div className={styles.desktopFooter}>
           <h3>
-            I believe the best work comes from a great connection. If you're not
-            sure if I'm the right tutor for you, you can send me a request so we
-            can spend 15 minutes getting to know each other.
+            Let’s connect to talk about your goals and create a plan that works
+            for you.
           </h3>
         </div>
 

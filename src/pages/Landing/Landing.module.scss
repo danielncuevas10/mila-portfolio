@@ -2,25 +2,33 @@ $smallest: 375px; // Smallest phones
 $tablet: 768px;      // iPad
 $tablet-pro: 1024px; // iPad Pro
 $desktop: 1200px;
+$main-color: #1A365D;
+$main-text: #475569;
+$second-color: #2E4A7D;
+$gold-accent: #B8860B;
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
 
 html {
   scroll-behavior: smooth;
+  background-color: #FCFBF7;
+  font-family: serif;
 }
 
 .landing {
-    min-height: 100vh; // take full screen height
-    background-color: #F9FAFB; // white page
+    min-height: 100vh; 
+    background-color: #FCFBF7; 
 
     &.english {
-      background-color: #cce4f832; 
+
 
       .hero {
         h1 {
-          color: #3B82F6;
+          color: #1B3022;
         }
 
         p {
-          color: #3B82F6;
+          color: #1B3022;
         }
       }
     }
@@ -29,13 +37,9 @@ html {
       .hero {
         .desktopButton,
         .phoneButton {
-          background-color: #1E3A8A; // blue for English page
+          background-color: #2d5790; 
           color: white;
-          border: none;
   
-          &:hover {
-            background-color: #2563eb; // darker blue
-          }
         }
       }
     }
@@ -49,47 +53,35 @@ html {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 90vh;
+    min-height: 90vh;
     text-align: center;
-    padding: 5rem 2rem 1rem 2rem;
-    margin: .5rem;
-    border-radius: 1rem;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.5);
-    background: linear-gradient(125deg, rgb(255, 254, 254), #d9d9d946);
+    margin: 2rem;
+    
 
-    .desktopButton,
-    .phoneButton {
-      background-color: #E0675B;
-      color: white;
-      border: none;
-
-      &:hover {
-        background-color: #d95b4e;
-      }
-    }
 
     .desktopButton {
       
-      background-color: #E0675B;  
+      background-color: $main-color;  
       color: white;             
       border: none;
 
       &.english {
 
-        background-color: #1E3A8A; 
+        background-color: $main-color; 
 
       }
 
       &:hover {
-        background-color: #e0665b85; 
+        background-color: $main-color; 
       }
     }
 
 
     .phoneButton {
-      background-color: #E0675B;
+      background-color: $main-color;
       color: white;
       border: none;
+      margin-top: 2rem;
 
       &:hover {
         background-color: #1E3A8A;
@@ -98,33 +90,43 @@ html {
 
     .phoneButton {
       display: inline-block;
+      
     }
     .desktopButton {
       display: none;
     }
   
     p {
-      font-size: .8rem;
-      color: #E0675B;
-      padding: 1rem;
+      font-weight: 400;
+      color: $main-text;
+      font-family: 'Inter', sans-serif;
+      padding: 1rem 0;
     }
 
     .mainTitle {
-      font-size: 1.5rem;
-      font-weight: 300;
-      color: #E0675B;
+      font-size: 2rem;
+      font-weight: 700;
+      color: $main-text;
+      font-family: 'Playfair Display', sans-serif;
+      padding: 2rem 0 0 0;
+
+      &.english {
+        color: $second-color;
+      }
     }
 
     .subTitle {
       font-size: 1rem;
       font-weight: 200;
-      color: #555;
+      color: $main-text;
+      font-family: 'Inter', sans-serif;
     }
 
     .mainPicture {
       width: 70%;
-      height: 18rem;
+      height: 20rem;
       overflow: hidden;
+      margin: 0 auto;
       
     }
 
@@ -132,7 +134,6 @@ html {
       width: 100%;
       height: 100%;
       object-fit: cover;
-      border-radius: 3rem;
       
     }
 
@@ -189,37 +190,43 @@ html {
     }
 
     @media (min-width: $desktop) {
+      flex-direction: row;
+      padding-top: 3rem;
+      text-align: left;
+      
 
-      flex-direction: row-reverse;
 
       .phoneButton { display: none; }
-      .desktopButton { display: inline-block; }
+      .desktopButton { 
+        display: flex; 
+        margin: 2rem 0;
+      }
 
       .heroTitles {
+        padding: 3rem;
         width: 45%;
       }
 
       .mainPicture {
-        width: 45%;
-        border-radius: 3rem;
+
 
         .groguImage {
-          width: 50%;
+          width: 80%;
           height: 100%;
-          border-radius: 3rem;
+
         }
       }
 
         p {
           font-size: 1.5rem;
-          color: #E0675B;
-          padding: 1rem;
+          color: #475569;
+          padding: 0;
         }
     
         .mainTitle {
           font-size: 2.5rem;
           font-weight: 300;
-          color: #E0675B;
+          color: #1E293B;
         }
     
         .subTitle {
@@ -228,54 +235,52 @@ html {
           color: #555;
         }
     
-   // Desktop
     }
 
 
   }
 
   .aboutMe {
+    padding: 2rem 0rem;
 
     &.english {
-      background-color: #cce4f832; 
 
       .thisIsMe {
 
         h2 {
-          color: #3B82F6;
+          color: $second-color;
         }
 
-        p {
-          color: #3c3c3cb4;
-        }
       }
     }
-
-
-    margin-top: 4rem;
 
     .thisIsMe {
       
       margin: 1.5rem;
 
       h2 {
-        color: #E0675B;
-        font-weight: 200;
+        color: $main-color;
+        font-weight: 700;
         font-size: 2.5rem;
-        
+        letter-spacing: .2rem;
+        font-family: 'Playfair Display', serif;
       }
 
       h3 {
         font-size: 1.4rem;
         font-weight: 400;
-        color: #000000a5;
+        color: $main-text;
+        font-family: 'Inter', sans-serif;
       }
 
       p {
-        color: #64646498;
+        color: $main-text;
         font-size: 1.2rem;
+        font-weight: 400;
         line-height: 1.5rem;
-        text-align: justify;
+        text-align: left;
+        font-family: 'Inter', sans-serif;
+        line-height: 1.4;
       }
 
   
@@ -286,31 +291,25 @@ html {
         }
     
         h3 {
-          font-size: 1.5rem;
-          font-weight: 200;
+
         }
     
         p {
-          font-size: 1rem;
-          line-height: 1.4rem;
+
         }
       }
     }
 
     @media (min-width: $tablet) {
-      display: flex;
-      flex-direction: row;   // side by side
-      justify-content: space-between; // push left & right apart
-      gap: 1rem;             // optional spacing between left & right
-      padding: 2rem;
+
     
       .left, .right {
-        flex: 1;             // each takes equal space
+        flex: 1;           
       }
     
       .right {
         display: flex;
-        justify-content: flex-end; // push features to right edge
+        justify-content: flex-end; 
         padding-top: 4rem;
       }
 
@@ -319,21 +318,18 @@ html {
           padding-top: 2rem;
           font-size: 1.5rem;
         }
-
-        .right {
-          display: flex;
-          justify-content: flex-end; // push features to right edge
-          padding-top: 5.1rem;
-        }
-
-
-       // iPad Pro
     
     }
     @media (min-width: $desktop) {
+
+      display: flex;
+      flex-direction: row;  
+      justify-content: space-between; 
+      gap: 1rem;             
+      padding: 2rem;
       .right {
         display: flex;
-        justify-content: flex-end; // push features to right edge
+        justify-content: flex-end; 
         padding-top: 3.1rem;
 
         h1 {
@@ -345,130 +341,78 @@ html {
         }
       }
     }
-      // Desktop
   }
 
 
 }
 
-.mathMain {
-  margin-top: 2rem;
-  width: 100%;         
-  padding: 0.5rem;   
-  box-sizing: border-box; 
-  display: flex;
-  justify-content: center; 
 
-  &.english {
-    img {
-      display: none;
-    }
-  }
-
-  @media (min-width: $tablet) {
-    display: none;
-  }
-}
-
-.mathMain .mathImage  {
-  border-radius: 1rem;
-  width: 100%;
-}
-
-
-// Services Section
 
 .services {
   margin-top: 4rem;
-  background: linear-gradient(125deg, rgb(255, 254, 254), #d9d9d946);
   margin: 3rem .5rem;
   border-radius: 1rem;
   padding: 3rem 1rem 4rem 1rem;
-  box-shadow: 0 1px 2px 0 rgba(63, 63, 63, 0.2), 0 1px 2px 0 rgba(63, 63, 63, 0.2);
+  
+
 
   &.english {
-    background: linear-gradient(125deg, rgb(255, 254, 254), #CEE5FF);
-
     h2 {
-      color: #1E3A8A;
+      color: $second-color;
     }
   }
 
-  h3 {
-    font-size: 5rem;
-  }
-
+  
   h2 {
-    color: #E0675B;
+    color: $main-color;
+    font-weight: 700;
+    font-size: 2.5rem;
+    letter-spacing: .2rem;
+    font-family: 'Playfair Display', serif;
     text-align: center;
-    font-weight: 00;
-    font-size: 1.5rem;
 
     @media (min-width: $tablet-pro) {
-      font-weight: 300;
+      font-weight: 700;
       font-size: 3rem;
     }
     
-    /* 4 columns on desktop */
-    @media (min-width: $desktop) {
-      font-weight:300;
-      font-size: 4.5rem;
-    }
   }
-
-  h3 {
-    text-align: center;
-    font-size: 1.5rem;
-    font-weight: 300;
-    color: #000000a5;
-    padding: .5rem 1rem;
-
-    @media (min-width: $tablet-pro) {
-      font-weight: 400;
-      font-size: 2rem;
-    }
-    
-    /* 4 columns on desktop */
-    @media (min-width: $desktop) {
-      font-weight:300;
-      font-size: 2.5rem;
-  }
-
-}
 
   p {
-    color: #555;
+    color: $main-text;
+    font-size: 1rem;
+    font-weight: 300;
+    line-height: 1.2rem;
     text-align: center;
-    font-size: .8rem;
-    font-weight: 200;
-    padding: .5rem 1rem;
+    font-family: 'Inter', sans-serif;
+    line-height: 1.4;
+
 
     @media (min-width: $tablet) {
-      font-size: 1.2rem;
-      font-weight: 300;
-    }
-
-    @media (min-width: $tablet-pro) {
-      font-weight: 300;
       font-size: 1.5rem;
+      font-weight: 300;
     }
     
     @media (min-width: $desktop) {
-      font-weight:300;
-      font-size: 2.2rem;
+      font-size: 1.8rem;
   }
   }
+  
   
 
 
 }
 
 .featuresList {
-  padding: .5rem;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: .05rem;
+    background-color: rgba(15, 23, 42, 0.05);
+  
 }
 
 
-// grid container for the cards (mobile-first)
+
 .servicesList {
   display: grid;
   grid-template-columns: 1fr; 
@@ -477,9 +421,10 @@ html {
   padding: 0;
   margin: 0;
   align-items: start;
+  padding: 4rem 0;
 }
 
-/* 2 columns on small tablets */
+
 @media (min-width: $tablet) {
   .servicesList {
     grid-template-columns: repeat(2, 1fr);
@@ -487,94 +432,15 @@ html {
   }
 }
 
-/* 4 columns on desktop */
+
 @media (min-width: $desktop) {
   .servicesList {
     grid-template-columns: repeat(4, 1fr);
   }
 }
 
-.services {
-  h2 {
-    color: #E0675B;
-    text-align: center;
-    font-weight: 200;
-    font-size: 2rem;
-
-    @media (min-width: $tablet-pro) {
-      font-weight: 300;
-      
-    }
-    
-    /* 4 columns on desktop */
-    @media (min-width: $desktop) {
-      font-weight:200;
-      font-size: 3rem;
-    }
-
-  }
-
-  h3 {
-    text-align: center;
-    font-size: 1.2rem;
-    font-weight: 400;
-    color: #000000a5;
-    padding: .5rem 1rem;
 
 
-    @media (min-width: $tablet-pro) {
-      font-weight: 400;
-      font-size: 1.5rem;
-    }
-    
-    /* 4 columns on desktop */
-    @media (min-width: $desktop) {
-      font-weight:300;
-      font-size: 2.5rem;
-  }
-
-}
-
-  p {
-    color: #555;
-    text-align: center;
-    font-size: 1rem;
-    font-weight: 200;
-    padding: .5rem 1rem;
-
-    @media (min-width: $tablet) {
-      font-size: 1rem;
-      font-weight: 300;
-    }
-
-    @media (min-width: $tablet-pro) {
-      font-size: 1rem;
-      font-weight: 300;
-    }
-    
-    /* 4 columns on desktop */
-    @media (min-width: $desktop) {
-      font-weight:300;
-      font-size: 1.5rem;
-  }
-  }
-
-}
-
-.testimonials {
-  padding-bottom: 2rem;
-
-  &.english {
-
-    h2 {
-      color: #1E3A8A;
-    }
-
-  }
-}
-
-
-  // grid container for the cards (mobile-first)
 .testimonialsList {
   display: grid;
   grid-template-columns: 1fr; 
@@ -585,18 +451,25 @@ html {
   align-items: start;
 }
 
-/* 2 columns on small tablets */
+
 @media (min-width: $tablet) {
+  
   .testimonialsList {
     grid-template-columns: repeat(2, 1fr);
-    gap: 1rem; 
+    gap: 0rem; 
+    padding: 0rem;
+    margin-top: 5rem;
+    background-color: #a7a7a70e;
+
   }
 }
 
-/* 4 columns on desktop */
+
 @media (min-width: $desktop) {
   .testimonialsList {
     grid-template-columns: repeat(4, 1fr);
+    background-color: #FCFBF7;
+    gap: 1rem;
   }
 }
 
@@ -604,89 +477,55 @@ html {
 
   
   h2 {
-    color: #E0675B;
+    color: $main-color;
+    font-weight: 700;
+    font-size: 2.5rem;
+    letter-spacing: .2rem;
+    font-family: 'Playfair Display', serif;
     text-align: center;
-    font-weight: 200;
-    font-size: 2rem;
 
     @media (min-width: $tablet-pro) {
-      font-weight: 300;
-    }
-    
-    /* 4 columns on desktop */
-    @media (min-width: $desktop) {
-      font-weight:200;
+      font-weight: 700;
       font-size: 3rem;
     }
-  }
-
-  h3 {
-    text-align: center;
-    font-size: 1.2rem;
-    font-weight: 400;
-    color: #000000a5;
-    padding: .5rem 1rem;
-
-    @media (min-width: $tablet-pro) {
-      font-weight: 400;
-      font-size: 1rem;
-    }
     
-    /* 4 columns on desktop */
-    @media (min-width: $desktop) {
-      font-weight:300;
-      font-size: 1.5rem;
   }
 
-  }
 
   p {
-    color: #555;
-    text-align: center;
+    color: $main-text;
     font-size: 1rem;
-    font-weight: 200;
-    padding: .5rem 1rem;
+    font-weight: 300;
+    line-height: 1.2rem;
+    text-align: center;
+    font-family: 'Inter', sans-serif;
+    line-height: 1.4;
+
 
     @media (min-width: $tablet) {
-      
-      font-size: 1rem;
+      font-size: 1.5rem;
       font-weight: 300;
-    }
-
-    @media (min-width: $tablet-pro) {
-      font-weight: 300;
-      font-size: 1rem;
     }
     
-    /* 4 columns on desktop */
     @media (min-width: $desktop) {
-      font-weight:300;
-      font-size: 1.5rem;
+      font-size: 1.8rem;
   }
   }
-
+  
 }
 
 .prices {
   margin-top: 4rem;
-  background: linear-gradient(125deg, rgb(255, 254, 254), #d9d9d946);
   margin: 3rem .5rem;
-  border-radius: 1rem;
   padding: 1rem 1rem 4rem 1rem;
-  box-shadow: 0 1px 2px 0 rgba(63, 63, 63, 0.2), 0 1px 2px 0 rgba(63, 63, 63, 0.2);
 
   &.english {
 
     h2 {
-      color: #1E3A8A;
+      color: $second-color;
 
   }
 
-  .phones {
-    h3 {
-      color: #0135b8;
-    }
-  }
 }
 
   @media (min-width: $tablet) {
@@ -700,44 +539,43 @@ html {
   @media (min-width: $desktop) {
     font-weight:300;
     font-size: 4.5rem;
+    margin: 3rem .1rem;
   }
-
   h2 {
-    color: #E0675B;
+    color: $main-color;
+    font-weight: 700;
+    font-size: 2.5rem;
+    letter-spacing: .2rem;
+    font-family: 'Playfair Display', serif;
     text-align: center;
-    font-weight: 200;
-    font-size: 2rem;
-
-
 
     @media (min-width: $tablet-pro) {
+      font-weight: 700;
+      font-size: 3rem;
+    }
+    
+  }
+
+
+  p {
+    color: $main-text;
+    font-size: 1rem;
+    font-weight: 300;
+    line-height: 1.2rem;
+    text-align: center;
+    font-family: 'Inter', sans-serif;
+    line-height: 1.4;
+    padding-bottom: 4rem;
+
+
+    @media (min-width: $tablet) {
+      font-size: 1.5rem;
       font-weight: 300;
     }
     
-    /* 4 columns on desktop */
     @media (min-width: $desktop) {
-      font-weight:200;
-      font-size: 3rem;
-    }
+      font-size: 1.8rem;
   }
-
-  h4 {
-    color: #525252;
-    text-align: center;
-    font-weight: 200;
-    font-size: 1rem;
-    padding: 1rem 0rem;
-
-    @media (min-width: $tablet-pro) {
-      font-weight: 300;
-    }
-
-    @media (min-width: $desktop) {
-      font-weight:300;
-      font-size: 1.5rem;
-      
-    }
-
   }
 
 
@@ -747,30 +585,20 @@ html {
     flex-direction:row;
     justify-content:space-between;
     align-items: center;
-    background-color: #F88379;
-    border: .5px solid #F88379;
+    border-bottom: .5px solid $main-color;
     margin: 1rem 0rem;
-    border-radius: 1rem;    
+    background-color: #FCFBF7; 
     padding: 1rem 2rem;        
-    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.19);
     width: 100%;
-
-    &.english {
-      background-color: #144b89;
-      border: .5px solid #1E3A8A;
-
-      h3 {
-        color: rgba(255, 255, 255, 0.784);
-        padding-left: 1rem;
-        font-weight: 200;
-        font-size: 1.1rem;
-      }
-    }
+    border-radius: 0;
+    
 
     h3 {
-      color: white;
-      padding-left: 1rem;
-      font-weight: 300;
+      color: $main-color;
+      font-weight: 700;
+      font-size: 1rem;
+      letter-spacing: .3rem;
+      font-family: 'Playfair Display', serif;
     }
 
     img {
@@ -797,7 +625,7 @@ html {
   }
 
   .priceListMobile.open {
-  max-height: 500px; // adjust as needed
+  max-height: 500px; 
   
   
 }
@@ -843,12 +671,10 @@ ul {
     
 
     @media (min-width: $desktop) {
-
-
       
       display: grid;
       grid-template-columns: repeat(4, 1fr);
-      gap: 3rem; 
+      gap: 1rem; 
 
       h3 {
         font-size: 1.2rem;
@@ -864,179 +690,63 @@ ul {
 }
 
 .contactMe {
-
-  background-image: url("../../assets/pictures/Contact-me.png");
-  background-size: cover;
-  background-position: center;
-  height: 45vh;
-
-  &.english {
-
-    background-image: url("../../assets/pictures/contact-meB.svg");
-
-    h1,p {
-      color: #1E3A8A;
-      
-    }
-}
-
   margin: 2rem .5rem;
-  border-radius: 1rem;
-  padding: 0rem 0rem 1rem 0rem;
   display: flex;
   justify-content: center;
-  position: relative;
-
-  @media (min-width: $smallest) {
-    height: 50vh;
-  }
-
-  @media (min-width: $tablet) {
-    background-image: url("../../assets/pictures/Contact-meiPad.png");
-    height: 45vh;
-    border-radius: 2rem;
-
-  }
-
-  @media (min-width: $tablet-pro)  {
-    background-image: url("../../assets/pictures/ContactiPadPro.png");
-    height: 35vh;
-  }
-
-  @media (min-width: $desktop)  {
-    background-image: url("../../assets/pictures/Contact-meDesktop.png");
-    height: 90vh;
-
-    &.english {
-      background-image: url("../../assets/pictures/rectBDesktop.svg");
-
-    }
-  }
-
-  img {
-    width: 100%;
-  }
-
-  .contactMeImage {
-    z-index: 0;
-  }
+  padding: 0;
 
   .contactMeText {
-    position: absolute;
-    z-index: 1;
     text-align: center;
     padding: 1rem 2rem;
-    color: white;
-    width: 88%;
+    color: $main-color;
 
     h1 {
-      font-weight: 300;
-      font-size: 1.8rem;
-      padding: .5rem;
-    }
+      color: $main-color;
+      font-weight: 700;
+      font-size: 2.5rem;
+      letter-spacing: .2rem;
+      font-family: 'Playfair Display', serif;
+      line-height: 4.5rem;
+    }  
 
     p {
-      font-weight: 200;
+      color: $main-text;
       font-size: 1rem;
-    }
-
-    @media (max-width: $smallest) {
-      h1 {
-        padding: 0;
-        margin: 0;
-        font-weight: 300;
-        font-size: 1.2rem;
-      }
-
-      p {
-        font-weight: 200;
-        font-size: .8rem;
-      }
-
-    }
-    
-
-    @media (min-width: $tablet) {
-      h1 {
-        font-weight: 300;
-        font-size: 2.5rem;
-      }
+      font-weight: 300;
+      line-height: 1.2rem;
+      text-align: center;
+      font-family: 'Inter', sans-serif;
+      line-height: 1.4;
+      padding: 2rem 0;
   
-      p {
-        font-weight: 200;
-        font-size: 1.4rem;
+  
+      @media (min-width: $tablet) {
+        font-size: 1.5rem;
+        font-weight: 300;
       }
       
-  
-    }
-  
-    @media (min-width: $tablet-pro)  {
-      h1 {
-        font-weight: 300;
-        font-size: 2.5rem;
-      }
-  
-      p {
-        font-weight: 200;
-        font-size: 1.4rem;
-      }
-    }
-  
-    @media (min-width: $desktop)  {
-      h1 {
-        font-weight: 300;
-        font-size: 2.5rem;
-      }
-  
-      p {
-        font-weight: 200;
-        font-size: 1.2rem;
-        padding: 1rem 8rem;
-      }
-    }
-
-    h4 {
-      font-size: 1.5rem;
-      font-weight: 200;
-      padding: .5rem;
-      color: rgb(255, 255, 255);
-
       @media (min-width: $desktop) {
-        font-size: 1.5rem;
-      }
+        font-size: 1.8rem;
+    }
+    }
+
+
+    .bookIcon {
+      height: 15rem;
+      width: auto;
+      padding: 2rem;
     }
 
 
     .footerGmailRow {
       color: #353535a5;
       display: flex;
-      align-items: center;   
-      gap: 0.75rem;          
-      margin-top: .5rem;
-      margin-left: 2rem;
-      background-color: rgba(255, 255, 255, 0.752);
-      padding: 1rem;
-      border-radius: .5rem;
+      align-items: center;  
+      justify-content: space-evenly;          
+      margin-top: 3.5rem;
       text-decoration: none;
       cursor: pointer;
-
-      @media (min-width: $smallest) {
-        margin-left: 0rem;
-      }
-
-
-      @media (min-width: $tablet) {
-        margin-left: 0rem;
-        padding: 1.5rem;
-      }
-
-
-      @media (min-width: $desktop) {
-        margin-left: 12rem;
-        padding: 0rem;
-        border-radius: 1rem;
-        width: 70%;
-      }
+      padding-bottom: 0;
     }
 
     .footerGmailRow:hover {
@@ -1045,149 +755,84 @@ ul {
     
     .footerGmailRow span {
       color: rgb(0, 0, 0);
-      text-decoration: none;
       font-size: 1rem;
-
-      &:hover {
-        text-decoration: underline;
-        color: #c2c2c2;
-        font-weight: 500;
-      }
-
-      @media (min-width: $smallest) {
-        font-size: .9rem;
-      }
+      letter-spacing: .2rem;
+      padding: 0;
 
       @media (min-width: $tablet) {
         font-size: 1.5rem;
-        text-align: center;
-        padding-left: 5rem;
       }
 
-      @media (min-width: $tablet-pro) {
-        font-size: 2rem;
-        padding-left: 8rem;
-      }
-
-      @media (min-width: $desktop) {
-        font-size: 1.5rem;
-        padding-left: 10rem;
-      }
     }
 
-    .gmailIcon {
-      height: 2rem;
-      width: auto;
-      filter: invert(40%);
-      margin-right: 1.5rem;
-  
+    hr {
+      border: none;           
+      border-top: .5px solid #B8860B; 
+      margin: 1em 0;          
+      width: 90%;    
+      padding: 0;          
+      margin-left: auto;       
+      margin-right: auto;
+
+      @media (min-width: $tablet) { 
+        width: 65%;
+      }
+
       @media (min-width: $desktop) { 
-        margin-left: 3rem;
-        height: 3rem;
-        width: auto;
-        padding: 2rem;
+        width: 38%;
       }
     }
   }
 }
 
 .footer {
-  background-color: #5A514E;
-  padding: 1rem;
+  background-color: $main-color;
+  margin-top: 5rem;
+  padding: 2rem 1rem;
+
+  &.english {
+    background-color: #2E4A7D;
+  }
 
   h2 {
-  color: #FAFAFA;
-  font-weight: 400;
-  text-align: center;
-  padding-bottom: 1.5rem;
+    color: #B8860B;
+    font-weight: 700;
+    font-size: 1.5rem;
+    letter-spacing: .1rem;
+    font-family: 'Playfair Display', serif;
+    text-align: center;
+    padding: 3rem 0;
 
-  @media (min-width: $desktop) { 
-    font-size: 1.2rem;
+  
+
+  @media (min-width: $tablet) { 
+    font-size: 2rem;
+    letter-spacing: .2rem;
   }
   }
 
   h3 {
-    color: #FFF8F0;
+    color: #FFF;
+    font-size: 1rem;
     font-weight: 300;
+    line-height: 1.2rem;
     text-align: center;
-    padding-bottom: 1.5rem;
+    font-family: 'Inter', sans-serif;
+    line-height: 1.4;
 
     @media (min-width: $tablet) { 
-      padding: 0rem 8rem;
-    }
-
-    @media (min-width: $tablet-pro) { 
-      padding: 0rem 10rem;
-    }
-
-    @media (min-width: $desktop) {
-      text-align: center;
-      padding: 0 15rem;
       font-size: 1.2rem;
-      width: 100%;
+      padding: 0 3rem;
     }
-  }
-
-  h4 {
-    color: #FFF8F0;
-    font-weight: 300;
-    @media (min-width: $desktop) { 
-      
-      font-size: 2rem;
-    }
-
-     a {
-      color: white;
-      font-weight: 500;
-      text-decoration: none;
-
-      @media (min-width: $desktop) { 
-        font-size: 1.5rem;
-      }
-
-     }
   }
 
   p {
     text-align: center;
-    padding-top: 2rem;
+    padding-top: 4rem;
+    color: #ffffffc7;
+    font-size: 1rem;
+    font-weight: 200;
+    font-family: 'Inter', sans-serif;
   }
 
-  .gmailIcon {
-    height: 3rem;
-    width: auto;
-    filter: invert(80%);
-    margin-right: 1.5rem;
-
-    @media (min-width: $desktop) { 
-      margin-left: 3rem;
-      height: 5rem;
-      width: auto;
-      padding: 2rem;
-    }
-  }
-
-
-  .footerGmail {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    a {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-  }
-}
-
-.desktopFooter {
-
-
-  @media (min-width: $desktop) {
-    display: flex;
-  }
-}
-
-.footer[data-page="english"] {
-  background-color: #2f3f5c;
 }

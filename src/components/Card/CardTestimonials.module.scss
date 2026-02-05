@@ -1,33 +1,23 @@
 $tablet: 768px;      // iPad
 $tablet-pro: 1024px; // iPad Pro
 $desktop: 1200px;
+$main-color: #1A365D;
+$main-text: #0F172A;
+$main-grey: #334155;
+$gold-accent: #B8860B;
 
 
 .card {
   display: flex;
   flex-direction: column;
-  background-color: #f8847963;
+
   margin: 1rem;
-  border-radius: 1rem;
-  padding: 1rem;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+  padding: 2rem 1.5rem;
+  border-bottom: .2px solid $main-color;
+  background-color: #FCFBF7;
 
-  .lineSeparator {
-    border: none;
-    height: 1.5px;
-    width: 90%;
-    margin: 0.8rem 1rem;
-    background-color: #F88379; // default
-  }
 
-  &.english {
-    background-color: #F0F7FF;
 
-    /* this targets the hr inside a card that has the english variant */
-    .lineSeparator {
-      background-color: #1E3A8A; // english variant
-    }
-  }
 
     .header {     
         
@@ -52,17 +42,18 @@ $desktop: 1200px;
     }
 
       p {
-        width: 100%;
-        padding: 0;
         text-align: left;
-        font-size: 1.5rem;
-        color: #000000;
-        font-weight: 300;
+        font-size: 1rem;
+        color: $main-text;
+        font-weight: 200;
+        font-weight: lighter;
+        font-family: 'Inter', sans-serif;
+        font-style: italic;
       }
 
       h3 {
         text-align: left;
-        color: #868686;
+        color: $main-color;
         padding: 0;
         margin: .5rem 0;
       }
@@ -71,7 +62,7 @@ $desktop: 1200px;
         padding: 0;
         margin: .5rem 0rem;
         font-weight: 300;
-        color: #868686;
+        color: $main-color;
 
       }
 
@@ -89,7 +80,18 @@ $desktop: 1200px;
         }
     }
 
+    @media (min-width: $tablet){
+      border-bottom: none;
+      margin: .1rem;
+      min-height: 18rem;
+
+    }
+      
+
     @media (min-width: $tablet-pro) {
+
+      border-bottom: none;
+      border-right: .2px solid $main-color;
 
 
       .description {
@@ -109,7 +111,7 @@ $desktop: 1200px;
   }
 
   @media (min-width: $tablet-pro) {
-      font-size: 1.2rem;
+    min-height: 25rem;
 
   }
 

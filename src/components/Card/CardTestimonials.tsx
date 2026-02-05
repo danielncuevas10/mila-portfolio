@@ -24,8 +24,6 @@ export default function TestimonialsCard({ feature, variant }: Props) {
 
       <p className={styles.descr}>{feature.description}</p>
 
-      <hr className={styles.lineSeparator} />
-
       <h3 className={styles.title}>{feature.title}</h3>
       <h4 className={styles.parent}>{feature.parent}</h4>
     </li>

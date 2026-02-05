@@ -1,43 +1,36 @@
 $tablet: 768px;      // iPad
 $tablet-pro: 1024px; // iPad Pro
 $desktop: 1200px;
-
+$main-color: #1A365D;
+$main-text: #0F172A;
+$main-grey: #334155;
 
 .card {
+    position: relative;     
     display: flex;
     flex-direction: column;
-    background-color: #f7f3f3;
-    border: .5px solid #F88379;
+    background-color: #FBF9F6;
+    box-shadow: 0 20px 40px rgba(15, 23, 42, 0.05);
     margin: 1rem 0rem;
-    border-radius: 1rem;    
-    padding: 1rem;        
-    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.19);
+    padding: 2rem;        
+    border: 1px solid rgba(18,34,63,0.06);
+    transition: all 0.3s ease;
+
+    
 
       &.english {
-        background: linear-gradient(125deg, rgba(152, 184, 214, 0.677), #79ace793);
-        border-color: #4d6fa2;
     
-        /* override text colors for english */
         .header h3,
         .price,
         .descr {
-          color: #0c3a6b;
+          
         }
 
     }
 
     &:hover {
-        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-        transition: 0.3s;
-        background-color: #f8847916;
-
-        &.english {
-            background-color: #cee5ffa1;
-        }
-
-        hr {
-            border-color: #d9d8d8;
-        }
+        transform: translateY(-5px);
+        box-shadow: 0 25px 50px rgba(15, 23, 42, 0.1);
     }
 
     .header {
@@ -45,56 +38,110 @@ $desktop: 1200px;
         justify-content: space-between;
 
         h3 {
-            color: #F88379;
+            margin: 0.5rem 0 0 0;   
+            font-size: 1.2rem;
+            color: $main-color;
+            font-weight: 700;
+            letter-spacing: .2rem;
+            font-family: 'Playfair Display', serif;
+            padding: 0 0 2rem 0;
+
+            @media (min-width: $tablet){
+                font-size: 1.5rem;
+            }
+
+            @media (min-width: $desktop){
+              font-size: 1.8rem;
+          }
+
         }
     }
     
     .price {
-        color: #F88379;
-        font-weight: 400;
+        padding: 0;
+        text-align: left;
+        font-size: 1.4rem;
+        color: #B8860B;
+        font-weight: 700;
+        font-family: 'Inter', sans-serif;
 
-        
     }
 
     p {
-        color: #F88379;
+        padding: 0;
+        text-align: left;
+        font-size: 1rem;
+        color: $main-text;
         font-weight: 300;
+        font-family: 'Inter', sans-serif;
+        line-height: 1.5rem;
     }
 
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 1.2s cubic-bezier(0.21, 0.45, 0.15, 1),
+                transform 1.2s cubic-bezier(0.21, 0.45, 0.15, 1);
 
-    @media (min-width: $tablet-pro) {
-        .header {
-            h3 {
-                font-size: 1.5rem;
-            }
-        }
-
-        h3 {
-            font-size: 1rem;
-        }
-
-        p {
-            font-size: 1.2rem;
-        }
-  
-    }
-
-    @media (min-width: $desktop) {
-        .header {
-            h3 {
-                font-size: 1.8rem;
-                font-weight: 400;
-            }
-        }
-
-        h3 {
-            font-size: 1rem;
-        }
-
-        p {
-            font-size: 1rem;
-        }
-  
-    }
 }
 
+.appear {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+.popular {
+    border-top: 5px solid #B8860B !important; 
+    background-color: #FFFFFF;
+
+
+  @media (min-width: $tablet){
+    box-shadow: 0 15px 35px rgba(184, 134, 11, 0.1);
+    transform: scale(1.03);
+    z-index: 2; 
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.1);
+}
+
+
+  }
+  
+  .popularBadge {
+
+    position: absolute;
+    top: -5px; 
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 99;
+  
+
+    background-color: #B8860B;
+    color: #fff;
+    padding: 6px 16px;
+    border-radius: 50px;
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    white-space: nowrap;
+
+    @media (min-width: $tablet){
+        top: -18px;
+    }
+  }
+  
+  .ctaButton {
+    margin-top: 20px;
+    padding: 12px;
+    background: $main-color;
+    border: 1px solid #FFF;
+    color: #FFF;
+    font-weight: 600;
+    display: flex;
+    justify-content: flex-start;
+    align-content: flex-start;
+    cursor: pointer;
+    &:hover {
+      background: #B8860B;
+      color: white;
+    }
+  }

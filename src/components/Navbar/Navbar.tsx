@@ -19,7 +19,6 @@ export const Navbar = ({ variant = "default" }: NavbarProps) => {
           <Link to="/">Mila Micovic</Link>
         </div>
 
-        {/* Hamburger — mobile only */}
         <button
           className={`${styles.hamburger} ${open ? styles.openBtn : ""}`}
           onClick={() => setOpen(!open)}
@@ -40,11 +39,10 @@ export const Navbar = ({ variant = "default" }: NavbarProps) => {
                 : "/"
             }
             onClick={(e) => {
-              setOpen(false); // close menu
+              setOpen(false);
               const heroId = "hero";
 
               if (!location.pathname.toLowerCase().includes("english")) {
-                // only smooth scroll on landing
                 e.preventDefault();
                 const hero = document.getElementById(heroId);
                 if (hero) hero.scrollIntoView({ behavior: "smooth" });
@@ -80,7 +78,6 @@ export const Navbar = ({ variant = "default" }: NavbarProps) => {
               setOpen(false);
               const id = "testimonials";
               if (location.pathname.toLowerCase().includes("english")) {
-                // redirect to English page with hash
                 window.location.href = `/English#${id}`;
               } else {
                 e.preventDefault();
@@ -99,7 +96,6 @@ export const Navbar = ({ variant = "default" }: NavbarProps) => {
               setOpen(false);
               const id = "prices";
               if (location.pathname.toLowerCase().includes("english")) {
-                // redirect to English page with hash
                 window.location.href = `/English#${id}`;
               } else {
                 e.preventDefault();
@@ -118,7 +114,6 @@ export const Navbar = ({ variant = "default" }: NavbarProps) => {
               setOpen(false);
               const id = "contact";
               if (location.pathname.toLowerCase().includes("english")) {
-                // redirect to English page with hash
                 window.location.href = `/English#${id}`;
               } else {
                 e.preventDefault();

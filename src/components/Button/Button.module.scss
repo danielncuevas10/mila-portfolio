@@ -1,31 +1,26 @@
 $tablet: 768px;      // iPad
 $tablet-pro: 1024px; // iPad Pro
 $desktop: 1200px;
+$main-color: #1A365D;
+
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
 
 button {
-    background-color: #F88379;
+    background-color: $main-color;
     color: white;
-    padding: .7rem 1.8rem;
+    padding: 1rem 2.8rem;
 
     margin: 1rem;
-    border-radius: .8rem;
+    border-radius: .5rem;
     border: none;
-    box-shadow: 0 4px 8px rgba(193, 193, 193, 0.4);
 
     font-size: 1.1rem;
 
     @media (min-width: $tablet) {
-
-    
-
       // iPad
     }
 
     @media (min-width: $tablet-pro)  {
-
-    
-   
-
       // iPad Pro
     }
 

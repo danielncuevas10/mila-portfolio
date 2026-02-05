@@ -17,9 +17,9 @@ export const features: Feature[] = [
 ];
 
 export const featureEnglish: Feature[] = [
-    {id: "certified", icon: medalB, title: "Globally Experienced", description: "Teaching English to learners from diverse cultures and backgrounds around the world"},
-    {id: "student", icon: pointB, title: "Student Centered", description: "Personalized lessons shaped around each learner’s goals and background"},
-    {id: "student", icon: teamB, title: "Culturally Aware Teaching", description: "Experienced in working with students across Asia and international classrooms"},
-    {id: "student", icon: ideaB, title: "Clear & Practical English", description: "Breaking down complex language into simple, usable communication"},
+    {id: "certified", icon: medalB, title: "Global Pedagogy", description: "Mentorship informed by diverse cultures and international standards"},
+    {id: "student", icon: pointB, title: "Strategic Focus", description: "Specialized preparation for elite performance in IELTS and TOEFL"},
+    {id: "student", icon: teamB, title: "Adaptive Learning", description: "Custom-tailored curricula that respect individual learning styles"},
+    {id: "student", icon: ideaB, title: "Practical Mastery", description: "Breaking down complex linguistic barriers into clear, usable fluencies"},
 
 ];

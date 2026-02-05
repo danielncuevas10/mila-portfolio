@@ -1,6 +1,5 @@
 import type { Testimonials } from "../components/Card/CardTestimonials";
 import quote from "../assets/pictures/icons/testimonials/quote.svg";
-import quoteb from "../assets/pictures/icons/testimonials/quoteb.svg";
 
 export const testimonials: Testimonials[] = [
     {id: "service1",
@@ -38,28 +37,28 @@ export const testimonials: Testimonials[] = [
 
 export const testimonialsEnglish: Testimonials[] = [
     {id: "service1",
-        icon: quoteb,
+        icon: quote,
         title: "Hana Park", 
         description: "My daughter used to be shy and afraid to speak English. After a few months, she started speaking confidently and even enjoyed her lessons. I could clearly see her progress, and her school results improved a lot. Thank you, Mila!",
         parent: "Parent",
 
     },
     {id: "service2", 
-        icon: quoteb, 
+        icon: quote, 
         title: "Kevin Lee", 
         description: "As a parent, I really appreciated how patient encouraging Mila is with my son during the lessons. He now understands English instead of memorizing it, and he feels confident speaking in class with his professors and friends.",
         parent: "Parent",
 
     },
     {id: "service3", 
-        icon: quoteb, 
+        icon: quote, 
         title: "Angela Lim", 
         description: "Mila helped me succeed at university. My academic English, presentations, and writing improved significantly, and I finally felt confident participating in lectures, discussions and talking to my friends.",
         parent: "Student",
 
     },
     {id: "service4", 
-        icon: quoteb, 
+        icon: quote, 
         title: "Maria Santos", 
         description: "I needed English for my professional career, and Mila was exactly what I was looking for. My communication improved as well as my pronunciation and I now feel confident using English in meetings.",
         parent: "Student",

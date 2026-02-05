@@ -1,8 +1,7 @@
 import React from "react";
 import { Navbar } from "../../components/Navbar/Navbar";
 import mila from "../../assets/pictures/Mila.svg";
-import math from "../../assets/pictures/math.png";
-import gmail from "../../assets/pictures/icons/gmail.png";
+import brain from "../../assets/pictures/icons/brain.png";
 import arrowDown from "../../assets/pictures/icons/prices/arrow-down.svg";
 import styles from "./Landing.module.scss";
 import Button from "../../components/Button/Button";
@@ -34,26 +33,29 @@ export const Landing = () => {
       <div id="hero">
         <div className={styles.hero}>
           <div className={styles.heroTitles}>
-            <h1 className={styles.mainTitle}>Math Teacher</h1>
+            <h1 className={styles.mainTitle}>
+              Master Mathematics with Personalized Tutoring.
+            </h1>
             <h2 className={styles.subTitle}>
               Exploring the Beauty of Mathematics
             </h2>
             <p>
-              Personalized online tutoring that adapts to your learning style.
-              Get one-on-one attention, flexible scheduling, and proven results
-              that help you achieve your academic goals.
+              Tailored 1-on-1 online tutoring designed to bridge learning gaps
+              and build lasting confidence. From Algebra to Calculus, we make
+              complex concepts simple.
             </p>
 
             <Button className={styles.desktopButton} onClick={goToContact}>
-              Contact me
+              Let’s Chat
             </Button>
           </div>
 
           <div className={styles.mainPicture}>
             <img src={mila} alt="Grogu" className={styles.groguImage} />
           </div>
+
           <Button className={styles.phoneButton} onClick={goToContact}>
-            Contact me
+            Let’s Chat
           </Button>
         </div>
       </div>
@@ -64,33 +66,16 @@ export const Landing = () => {
             <h2>About Me</h2>
             <h3>Dedicated to Your Academic Success</h3>
             <p>
-              With over 6 years of teaching experience combined with a
-              Mathematics Degree from the{" "}
-              <span style={{ fontWeight: "bold" }}>
+              Mathematics graduate from the{" "}
+              <span style={{ color: "#B8860B", fontWeight: "light" }}>
                 {" "}
                 University of British Columbia
               </span>
-              , I’ve helped students discover their true capabilities and
-              achieve meaningful academic goals.
-            </p>
-            <p>
-              My strong academic foundation along with my hands-on teaching
-              experience gives me the base needed to help you succeed. Through
-              individual tutoring, online lessons, and university-level
-              teaching, I’ve developed an approach that prioritizes
-              understanding, practice, and adapting to each student’s learning
-              style rather than relying on memorization or passive lecturing. My
-              own academic experience which is ongoing as a Master's Student,
-              gives me a layer of empathy and understanding which is key to
-              developing a connection that will allow us to succeed together.
-            </p>
-
-            <p>
-              I can help you achieve your learning goals—whether that means exam
-              preparation, strengthening fundamentals, or developing practical,
-              real-world skills. I work alongside my students to build
-              personalized learning plans that turn complex ideas into
-              confidence and clarity
+              &nbsp; with 6+ years of teaching experience. Currently a Master’s
+              student, I specialize in turning complex concepts into clear,
+              actionable intuition. My approach replaces rote memorization with
+              deep understanding, tailored to your specific goals—from exam prep
+              to core fundamentals.
             </p>
           </div>
         </div>
@@ -104,21 +89,14 @@ export const Landing = () => {
         </div>
       </div>
 
-      <div className={styles.mathMain}>
-        <img src={math} alt="Grogu" className={styles.mathImage} />
-      </div>
-
       <div id="services">
         <div className={styles.services}>
           <h2>Services</h2>
-          <p>
-            I help students truly understand mathematics instead of memorizing
-            formulas. Lessons focus on clarity and step-by-step problem solving.
-          </p>
+          <p>Lessons focus on clarity and step-by-step problem solving.</p>
 
           <div className={styles.servicesList}>
-            {services.map((service) => (
-              <ServicesCard key={service.id} feature={service} />
+            {services.map((service, index) => (
+              <ServicesCard key={service.id} feature={service} index={index} />
             ))}
           </div>
         </div>
@@ -127,7 +105,7 @@ export const Landing = () => {
       <div id="testimonials">
         <div className={styles.testimonials}>
           <h2>Testimonials</h2>
-          <h3>Real feedback from students who've enhanced their learning</h3>
+          <p>Real feedback from students who've enhanced their learning</p>
 
           <div className={styles.testimonialsList}>
             {testimonials.map((testimonial) => (
@@ -140,11 +118,11 @@ export const Landing = () => {
       <div id="prices">
         <div className={styles.prices}>
           <h2>Prices</h2>
-          <h4>All the prices are shown in Canadian Dollars.</h4>
+          <p>Investment in academic excellence. All rates are quoted in CAD.</p>
 
           <div className={styles.priceDesktop}>
-            {prices.map((price) => (
-              <PricesCard key={price.id} price={price} />
+            {prices.map((price, index) => (
+              <PricesCard key={price.id} price={price} index={index} />
             ))}
           </div>
 
@@ -188,40 +166,33 @@ export const Landing = () => {
       <div id="contact">
         <div className={styles.contactMe}>
           <div className={styles.contactMeText}>
-            <h1>Contact Me</h1>
+            <h1>Begin Your Journey</h1>
             <p>
-              I help students understand mathematics in a clear and supportive
-              way, building strong foundations and confidence over time. Parents
-              and students are welcome to get in touch to discuss lessons,
-              learning goals, or any questions they may have.
+              I invite parents and students to reach out for a private
+              discussion regarding academic goals.
             </p>
 
-            <div className={styles.footerGmail}>
-              <h4>Get in touch:</h4>
+            <img src={brain} alt="book icon" className={styles.bookIcon} />
 
+            <div className={styles.theLine}>
               <a
                 href="mailto:mila.micovic26@gmail.com"
                 className={styles.footerGmailRow}
               >
-                <img
-                  src={gmail}
-                  alt="gmail icon"
-                  className={styles.gmailIcon}
-                />
                 <span>mila.micovic26@gmail.com</span>
               </a>
+              <hr />
             </div>
           </div>
         </div>
       </div>
 
       <div className={styles.footer}>
-        <h2>Not sure if I'm for you?</h2>
+        <h2>Complimentary Consultation</h2>
         <div className={styles.desktopFooter}>
           <h3>
-            I believe the best work comes from a great connection. If you're not
-            sure if I'm the right tutor for you, you can send me a request so we
-            can spend 15 minutes getting to know each other.
+            I invite you to send me a request so we can spend 15 minutes getting
+            to know each other.
           </h3>
         </div>
 
