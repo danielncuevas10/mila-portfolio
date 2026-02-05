@@ -66,20 +66,6 @@ $gold-accent: #B8860B;
 
       }
 
-    &:hover {
-        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-        transition: 0.3s;
-        background-color: #f8847911;
-
-        &.english {
-          background-color: #CEE5FF;
-      }
-
-        hr {
-            border-color: #d9d8d8;
-        }
-    }
-
     @media (min-width: $tablet){
       border-bottom: none;
       margin: .1rem;

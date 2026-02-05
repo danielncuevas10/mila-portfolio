@@ -1,5 +1,5 @@
-$tablet: 768px;      // iPad
-$tablet-pro: 1024px; // iPad Pro
+$tablet: 768px;      
+$tablet-pro: 1024px; 
 $desktop: 1200px;
 $main-color: #1A365D;
 $main-text: #0F172A;
@@ -71,15 +71,8 @@ $main-grey: #334155;
 
 
     &:hover {
-        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
         transition: 0.3s;
-        background-color: #fffff9;
-
-        &.english {
-          box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(82, 79, 79, 0.19);
-          transition: 0.3s;
-          background-color: #cee5ff2b;
-      }
+        background-color: #fffff98c;
     }
 
     @media (min-width: $tablet) {

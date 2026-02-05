@@ -159,12 +159,17 @@ $sans-font: 'Inter', sans-serif;
         justify-content: center;
         padding: 0;
         white-space: nowrap;
+       
       }
 
       &:hover {
         background-color: $main-color;
-        color: $bg-color;
+        color: #FFF;
         transform: scale(1.1);
+
+        a {
+          color: #FFF;
+        }
       }
     }
   }
