@@ -126,9 +126,9 @@ export const Navbar = ({ variant = "default" }: NavbarProps) => {
           </a>
         </li>
         <li>
-          <div className={styles.divider}>
-            <Link to="/English">Learn English</Link>
-          </div>
+          <Link to="/English" className={styles.dividerLink}>
+            Learn English
+          </Link>
         </li>
       </ul>
     </nav>

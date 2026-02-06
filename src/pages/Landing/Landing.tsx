@@ -1,6 +1,6 @@
 import React from "react";
 import { Navbar } from "../../components/Navbar/Navbar";
-import mila from "../../assets/pictures/Mila.svg";
+import milas from "../../assets/pictures/milas.svg";
 import brain from "../../assets/pictures/icons/brain.png";
 import arrowDown from "../../assets/pictures/icons/prices/arrow-down.svg";
 import styles from "./Landing.module.scss";
@@ -51,7 +51,7 @@ export const Landing = () => {
           </div>
 
           <div className={styles.mainPicture}>
-            <img src={mila} alt="Grogu" className={styles.groguImage} />
+            <img src={milas} alt="Grogu" className={styles.groguImage} />
           </div>
 
           <Button className={styles.phoneButton} onClick={goToContact}>

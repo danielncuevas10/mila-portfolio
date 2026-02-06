@@ -53,9 +53,9 @@ export const English = () => {
             <h2 className={styles.subTitle}>PREMIUM ENGLISH TUTORING</h2>
 
             <p>
-              Personalized mentorship designed for students who demand
-              excellence in English. From academic writing to fluent
-              conversation, we build the foundations of a global communicator.
+              Expert mentorship focused on academic precision and natural
+              conversation. Develop the skills to communicate effectively on a
+              global stage.
             </p>
             <Button className={styles.desktopButton} onClick={goToContact}>
               Contact me

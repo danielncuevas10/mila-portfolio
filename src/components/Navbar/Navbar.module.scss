@@ -47,8 +47,9 @@ $sans-font: 'Inter', sans-serif;
 
   a {
     text-decoration: none;
-    font-weight: 500;
+    font-weight: 600;
     font-size: 1.5rem;
+    font-family: $serif-font;
     color: $main-color;
   }
 }
@@ -103,6 +104,11 @@ $sans-font: 'Inter', sans-serif;
   transform: translateY(-120%);
   transition: transform .55s ease;
   margin: 0;
+  transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+
+  &.hover {
+    color: #1a365db2;
+  }
 
   &.open {
     transform: translateY(0);
@@ -124,12 +130,27 @@ $sans-font: 'Inter', sans-serif;
       &:hover { color: $accent-color; }
     }
   }
-
-  .divider {
-    border: 1px solid $main-color;
-    text-align: center;
-    padding: 1rem;
+  .dividerLink {
+    display: flex;        
+    justify-content: center;
+    align-items: center;
+    padding: 1rem 2rem;    
+    border: 1px solid #FFF;
     border-radius: 5px;
+    text-decoration: none;
+    color: $main-color;
+    transition: all 0.3s ease;
+    white-space: nowrap; 
+    background: #FFF;
+  
+    &:hover {
+      background-color: $main-color;
+      color: #FFF;
+    }
+
+    @media (min-width: $desktop) {
+      border: 1px solid $main-color;
+    }
   }
 }
 
@@ -183,8 +204,7 @@ $sans-font: 'Inter', sans-serif;
     color: $main-color;
 
     &:hover {
-      color: #1E3A8A;
-      transform: scale(1.1);
+      color: #b0b6c7;
     }
   }
 
